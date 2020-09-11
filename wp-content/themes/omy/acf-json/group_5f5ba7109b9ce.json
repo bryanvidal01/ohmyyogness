@@ -1,0 +1,78 @@
+{
+    "key": "group_5f5ba7109b9ce",
+    "title": "Champs (combinaison)",
+    "fields": [
+        {
+            "key": "field_5f5ba7191c422",
+            "label": "Identifiant de la combinaison",
+            "name": "post_combinaison_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Pas d'accents, remplacer les espaces par des \"_\" et pas de caractère spéciaux",
+            "prepend": "",
+            "append": "",
+            "maxlength": 40
+        },
+        {
+            "key": "field_5f5ba7ee32fa6",
+            "label": "URL de redirection",
+            "name": "post_combinaison_redirection",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f5ba8efe9d61",
+            "label": "Niveau",
+            "name": "post_combinaison_level",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "combinaison"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1599842564
+}

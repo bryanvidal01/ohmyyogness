@@ -139,9 +139,9 @@ p{
 			padding-top: 90px;
 			width: 100%;
 			opacity: 0;
-			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 			transition: .4s;
 			.criteria{
@@ -149,11 +149,12 @@ p{
 				li{
 					display: inline-block;
 					background: $color-clear;
-					font-size: 14px;
+					font-size: 12px;
+					margin-top: 5px;
 					color: #FFF;
 					font-weight: 500;
 					border-radius: 5px;
-					padding: 5px 10px;
+					padding: 3px 7px;
 				}
 			}
 
@@ -186,6 +187,7 @@ p{
 
 	.teacher-name{
 		font-size: 22px;
+		color: #333;
 	}
 
 	.teacher-description{
@@ -482,4 +484,24 @@ p{
 	}
 }
 
+
+// Single professeur
+
+.calendar-dates{
+	width: 100%;
+	margin-top: 30px;
+	tr{
+		border-bottom: 1px solid #eee;
+
+		td{
+			padding: 15px 0;
+		}
+
+		th{
+			font-size: 18px;
+			font-weight: 600;
+			padding: 15px 0;
+		}
+	}
+}
 

@@ -23,7 +23,7 @@ function theme_setup() {
 
     show_admin_bar(false);
 
-    add_image_size( 'thumbnail_example', 600, 800, array( 'center', 'center' ) );
+    add_image_size( '400_400', 400, 400, array( 'center', 'center' ) );
 
 }
 
