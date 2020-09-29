@@ -1,38 +1,58 @@
 $(document).ready(function(){
 
+    // Calendar
 
-    /*function parallax() {
-        var $slider = document.getElementById("slider");
+    //Pagination
+    var paginateCount = 8;
+    var filterInit = "collectif";
 
-        var yPos = window.pageYOffset / $slider.dataset.speed;
-        yPos = -yPos;
 
-        var coords = '0% '+ yPos + 'px';
+    initCalendar(filterInit, paginateCount);
 
-        $slider.style.backgroundPosition = coords;
-    }
 
-    window.addEventListener("scroll", function(){
-        parallax();
-    });*/
+    $('.navigation-calendar a').click(function(event){
+        event.preventDefault();
 
-    $("a[href*='#']:not([href='#'])").click(function() {
-        if (
-            location.hostname == this.hostname
-            && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
-        ) {
-            var anchor = $(this.hash);
-            anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
-            if ( anchor.length ) {
-                $("html, body").animate( { scrollTop: anchor.offset().top }, 600);
-            }
+        if(!$(this).hasClass('active')){
+            $('.navigation-calendar a').removeClass('active');
+            $(this).addClass('active');
+            var filterInit = jQuery(this).attr('href');
+            $('.calendar-dates tbody tr').addClass('hidde');
+            $('.moreCalendar').removeClass('hidde');
+            initCalendar(filterInit, paginateCount);
         }
     });
 
 
-    $('.navigation-toggle').click(function(event){
-        $('body').toggleClass('nav-open');
+    $('.moreCalendar').click(function(event){
+        event.preventDefault();
+
+        filterInit = $('.navigation-calendar a.active').attr('href');
+        initCalendar(filterInit, paginateCount);
+
     });
+
+    function initCalendar(filterInit, paginateCount){
+        var countInc = 0;
+
+        $('tbody tr.' + filterInit + '.hidde').each(function( ) {
+            var el = $(this);
+
+            if(paginateCount > countInc){
+                el.removeClass('hidde');
+            }
+
+            countInc++;
+
+        });
+
+        if($('tbody tr.' + filterInit + '.hidde').length == 0){
+            $('.moreCalendar').addClass('hidde')
+        }
+
+    }
+
+
 
 });
 
@@ -46,4 +66,9 @@ window.onload = function() {
         autoplay: true,
         arrows: false,
     });
+
+
+
+
+
 };

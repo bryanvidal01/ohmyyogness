@@ -65,12 +65,13 @@ function getCalendarFromGoogle($calendrier){
         $startDt = new DateTime ( $start );
         $startDt->setTimeZone ( new DateTimezone ( $timeZone ) );
         $startCompare = $startDt->format ( 'm/d/Y H:i' );
-        $startDate = $startDt->format ( 'd/m/Y H:i' );
+        $startDateDay = $startDt->format ( 'd/m/Y' );
+        $startDate = $startDt->format ( 'H:i' );
         /* Getting end date with time */
         $end = isset( $icsEvent ['DTEND;VALUE=DATE'] ) ? $icsEvent ['DTEND;VALUE=DATE'] : $icsEvent ['DTEND'];
         $endDt = new DateTime ( $end );
         $endDt->setTimeZone ( new DateTimezone ( $timeZone ) );
-        $endDate = $endDt->format ( 'd/m/Y H:i' );
+        $endDate = $endDt->format ( 'H:i' );
         /* Getting the name of event */
         $eventName = $icsEvent['SUMMARY'];
         $eventDescription = $icsEvent['DESCRIPTION'];
@@ -78,6 +79,7 @@ function getCalendarFromGoogle($calendrier){
         $arrayCalendar[$i] = [
             'eventName' => $eventName,
             'startCompare' => $startCompare,
+            'startDateDay' => $startDateDay,
             'startDate' => $startDate,
             'endDate'   => $endDate,
             'eventDescription' => $eventDescription

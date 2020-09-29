@@ -324,6 +324,13 @@ p{
 	}
 }
 
+.single-professeurs{
+	.header{
+		border-bottom: 1px solid #eee;
+		margin-bottom: 30px;
+	}
+}
+
 // Footer
 .footer{
 	background: $color-primary;
@@ -487,9 +494,166 @@ p{
 
 // Single professeur
 
+.link-back{
+	margin-bottom: 30px;
+	display: block;
+	position: relative;
+	color: $black;
+	transition: .3s;
+	font-size: 14px;
+	font-weight: 500;
+	&:hover{
+		color: $color-primary;
+	}
+	&:before{
+		content: '';
+		width: 13px;
+		height: 11px;
+		background-image: url('../images/chevron.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		display: inline-block;
+	}
+}
+
+.title{
+	&.sub-title-prof{
+		margin-top: -30px;
+	}
+}
+
+.teacher-infos-single{
+	margin-top: 30px;
+
+	.response{
+		color: #444;
+	}
+	li{
+		margin-bottom: 10px;
+		font-size: 15px;
+		.label{
+			font-weight: 500;
+		}
+
+		.attributs{
+			li{
+				display: inline-block;
+				background: rgba($color-clear, .4);
+				padding: 4px 14px;
+				font-size: 12px;
+				margin: 4px 8px 4px 0;
+				border-radius: 3px;
+				font-weight: 500;
+
+				strong{
+					color: $color-primary;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}
+
+.strate-video-prof{
+	overflow: hidden;
+	position: relative;
+	padding: 40px 0 60px;
+	margin: 50px 0 0;
+	&-background{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		top: 0;
+	}
+	&-container{
+		position: relative;
+		z-index: 3;
+		color: #FFF;
+		.title-hand{
+			color: #FFF;
+			margin-top: 0;
+		}
+	}
+
+	&:after{
+		content: '';
+		position: absolute;
+		width: 100%;
+		top: 0;
+		height: 100%;
+		background: rgba(#222, .9);
+	}
+}
+
+.strate-text-background{
+	background-color: rgba($color-clear, .3);
+	padding: 60px;
+}
+
+
+.navigation-calendar{
+	.button{
+		margin: 0 7px;
+		opacity: .6;
+
+		&.active{
+			opacity: 1;
+		}
+	}
+}
+
+
+
+.strate-citation{
+	background: $color-primary;
+	padding: 120px 0 100px;
+	margin-top: 50px;
+
+	.citation{
+		font-size: 47px;
+		color: #FFF;
+		position: relative;
+		font-weight: 300;
+		line-height: 52px;
+
+		&:before, &:after{
+			content: '’’';
+			font-size: 90px;
+			position: absolute;
+			height: 0px;
+		}
+
+		&:before{
+			margin-left: -40px;
+			transform: rotate(180deg);
+			top: 0;
+		}
+
+		&:after{
+			bottom: 0;
+			margin-left: 15px;
+		}
+
+	}
+
+	.author{
+		color: #FFF;
+		margin-top: 30px;
+		font-size: 18px;
+		font-weight: 500;
+	}
+}
+
+
 .calendar-dates{
 	width: 100%;
 	margin-top: 30px;
+	margin-bottom: 30px;
+	.hidde{
+		display: none;
+	}
+
 	tr{
 		border-bottom: 1px solid #eee;
 
@@ -502,6 +666,14 @@ p{
 			font-weight: 600;
 			padding: 15px 0;
 		}
+	}
+}
+
+.moreCalendar{
+	margin-bottom: 30px;
+	display: inline-block;
+	&.hidde{
+		display: none;
 	}
 }
 
