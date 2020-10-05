@@ -2,12 +2,27 @@
 get_header();
 
 
-$teacherKeyWords = get_field('posttype_prof_key_words', $postID);
+$postID = get_the_ID();
 
+if($_POST){
+    $returnRecommendation = sendRecommendation($postID);
+}
+
+$teacherKeyWords = get_field('posttype_prof_key_words', $postID);
 
 $urlGoogleAgenda = get_field('posttype_prof_calendar_url');
 $agendaTeacher = getCalendarFromGoogle($urlGoogleAgenda);
 $emailTeacher = get_field('posttype_prof_calendar_email');
+$teachRecommandation = get_field('posttype_prof_recommandation',$postID);
+
+$postsRecommendations = get_posts(array(
+    'numberposts'	=> -1,
+    'post_type'		=> 'recommendations',
+    'meta_key'		=> 'recommendation_prof_id',
+    'meta_value'	=> get_the_ID()
+));
+$domaines = get_domaines_recommendations($postsRecommendations);
+$domainesProfesseur = get_field('recommandation_domaines');
 ?>
 
 <div class="container">
@@ -19,7 +34,7 @@ $emailTeacher = get_field('posttype_prof_calendar_email');
         </div>
         <div class="col-sm-6">
             <div class="image-prof">
-                <img src="http://fakeimg.pl/700x700/" width="100%" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/professeur.jpg" width="100%" alt="">
             </div>
         </div>
         <div class="col-sm-6">
@@ -63,35 +78,41 @@ $emailTeacher = get_field('posttype_prof_calendar_email');
 
                 <li class="col-sm-6">
                     <ul>
-                        <li>
-                            <div class="label">
-                                Recommandé par
-                            </div>
-                            <div class="response">
-                                2 élèves
-                            </div>
-                        </li>
+                        <?php if($teachRecommandation): ?>
+                            <li>
+                                <div class="label">
+                                    Recommandé par
+                                </div>
+                                <div class="response">
+                                    <?php echo $teachRecommandation; ?> élève<?= ($teachRecommandation > 1)? 's' : ''; ?>
+                                </div>
+                            </li>
+                        <?php endif; ?>
 
+                        <?php if($domaines): ?>
                         <li>
                             <div class="label">
                                 L'enseignement de <?php echo get_the_title(); ?> est reconnu pour être:
                             </div>
                             <div class="response">
                                 <ul class="attributs">
-                                    <li>
-                                        à l'écoute <strong>2</strong>
-                                    </li>
-                                    <li>
-                                        Cours particulier <strong>2</strong>
-                                    </li>
+                                    <?php foreach ($domaines as $key => $domaine): ?>
+                                        <li>
+                                            <?php echo $key; ?>
+                                            <strong>
+                                                <?php echo $domaine; ?>
+                                            </strong>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </li>
+                        <?php endif; ?>
                     </ul>
                 </li>
             </ul>
 
-            <a href="" class="button primary">Recommander ce prof</a>
+            <a href="#add-recommandation" class="button primary">Recommander ce prof</a>
         </div>
     </div>
 </div>
@@ -109,13 +130,14 @@ $emailTeacher = get_field('posttype_prof_calendar_email');
                 <div class="title">
                     Les dessous des prof's
                 </div>
-                <iframe width="100%" height="343" src="https://www.youtube.com/embed/tYy14QhR5B0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="343" src="https://www.youtube.com/embed/IyyJpiF-WnI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="col-sm-6">
                 <div class="title">
                    10 minutes de cours avec <?php echo get_the_title(); ?>
                 </div>
-                <iframe width="100%" height="343" src="https://www.youtube.com/embed/tYy14QhR5B0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="343" src="https://www.youtube.com/embed/IyyJpiF-WnI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
             </div>
         </div>
     </div>
@@ -143,7 +165,7 @@ $emailTeacher = get_field('posttype_prof_calendar_email');
 </div>
 <div class="container" >
     <div class="row">
-        <div class="col-sm-12 text-center marge-top-sup">
+        <div class="col-sm-12 text-center marge-top">
             <h1 class="title-hand">Calendrier</h1>
         </div>
 
@@ -274,7 +296,7 @@ $emailTeacher = get_field('posttype_prof_calendar_email');
     </div>
 </div>
 
-
+<?php if($teachRecommandation): ?>
 <div class="strate-recommandations">
     <div class="container">
         <div class="row">
@@ -284,68 +306,80 @@ $emailTeacher = get_field('posttype_prof_calendar_email');
                 </div>
             </div>
             <div class="col-sm-6">
+                <?php if($teachRecommandation): ?>
                 <div class="recommendations-number">
-                    <strong>2</strong> élèves
+                    <strong><?php echo $teachRecommandation; ?></strong> élève<?= ($teachRecommandation > 1)? 's' : ''; ?>
                 </div>
-                Ont recommandés ce prof
+                <?= ($teachRecommandation > 1)? 'Ont recommandés ce prof' : 'A recommandé ce prof'; ?>
+                <?php endif; ?>
             </div>
             <div class="col-sm-6 text-right">
-                <a href="" class="button primary">Recommander ce professeur</a>
+                <a href="#add-recommandation" class="button primary">Recommander ce professeur</a>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <div class="item-recommandation">
-                    <div class="name-recommandation">
-                        Noémie
+
+                <?php
+                foreach ($postsRecommendations as $postsRecommendationsItem):
+                    $authorRecommandationID = get_field('recommendation_user_id', $postsRecommendationsItem);
+                    $recommandationDateTimestamp = get_field('recommendation_date', $postsRecommendationsItem);
+                    $recommandationDate = date('d/m/Y à H:i', $recommandationDateTimestamp);
+                    $recommandationStatusID = get_field('recommendation_status', $postsRecommendationsItem);
+                    $recommandationDomaines = get_field('recommendation_domaines', $postsRecommendationsItem);
+                    $recommandationStatus = get_recommendation_status($recommandationStatusID);
+                    $recommandationMessage = get_field('recommendation_commentaire', $postsRecommendationsItem);
+                    $authorRecommandation = get_userdata($authorRecommandationID);
+                    $authorRecommandationName = $authorRecommandation->display_name;
+
+                ?>
+                    <div class="item-recommandation">
+                        <div class="name-recommandation">
+                            <?php echo $authorRecommandationName; ?>
+                        </div>
+                        <div class="date-recommandation">
+                            <?php echo $recommandationDate; ?>
+                        </div>
+                        <div class="status-recommandation">
+                            "<?php echo $recommandationStatus; ?>"
+                        </div>
+                        <?php if($recommandationDomaines): ?>
+                        <div class="domaines-recommandation">
+                            Domaines recommandés : <?php $i = 0; foreach ($recommandationDomaines as $recommandationDomaineItem): ?><?= ($i > 0)? ', ' : ''; ?><?php echo $recommandationDomaineItem['recommendation_domaines_label']; ?><?php $i++; endforeach; ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php if($recommandationMessage): ?>
+                        <div class="message-recommandation">
+                            <?php echo $recommandationMessage; ?>
+                        </div>
+                        <?php endif; ?>
                     </div>
-                    <div class="date-recommandation">
-                        12/07/2020 à 13h30
-                    </div>
-                    <div class="status-recommandation">
-                        " Je recommande vivement "
-                    </div>
-                    <div class="domaines-recommandation">
-                        à l'écoute, cours particuliers
-                    </div>
-                    <div class="message-recommandation">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur commodi excepturi itaque iusto minus odio reiciendis rerum. Inventore, nostrum, saepe. Amet aperiam debitis et facilis molestias omnis sequi tempora!
-                    </div>
-                </div>
-                <div class="item-recommandation">
-                    <div class="name-recommandation">
-                        Noémie
-                    </div>
-                    <div class="date-recommandation">
-                        12/07/2020 à 13h30
-                    </div>
-                    <div class="status-recommandation">
-                        " Je recommande vivement "
-                    </div>
-                    <div class="domaines-recommandation">
-                        à l'écoute, cours particuliers
-                    </div>
-                    <div class="message-recommandation">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur commodi excepturi itaque iusto minus odio reiciendis rerum. Inventore, nostrum, saepe. Amet aperiam debitis et facilis molestias omnis sequi tempora!
-                    </div>
-                </div>
+                <?php endforeach; ?>
+
             </div>
         </div>
     </div>
 </div>
+<?php endif; ?>
 
-<div class="strate-add-recommendation">
-    <div class="container">
+<div class="strate-add-recommendation" id="add-recommandation">
+    <form class="container" method="post">
         <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-hand">
+                    Votre avis compte !
+                </div>
+            </div>
             <div class="col-sm-4">
                 <div class="container-select">
                     <div class="label">
-                        Localisation
+                        Recommandation
                     </div>
-                    <select name="location" id="" class="select-filter">
-                        <option value="">Choisissez une ville</option>
-                        <option value="">Choisissez une ville</option>
-                        <option value="">Choisissez une ville</option>
+                    <select name="recommandationStatus" id="" class="select-filter">
+                        <option value="1">Je recommande vivement</option>
+                        <option value="2">Je recommande</option>
+                        <option value="3">Aucun avis</option>
+                        <option value="4">Je ne recommande pas</option>
                     </select>
                 </div>
             </div>
@@ -355,10 +389,34 @@ $emailTeacher = get_field('posttype_prof_calendar_email');
                 <div class="label">
                     Domaines recommandés
                 </div>
-
+                <?php if($domainesProfesseur): ?>
+                    <?php $i = 0; foreach ($domainesProfesseur as $domaineProfesseurItem): ?>
+                        <div class="domaine-checkbox">
+                            <input type="checkbox" id="domaine-<?= $i; ?>" name="domaine[]" value="<?= $domaineProfesseurItem['recommandation_domaine_name']; ?>">
+                            <label for="domaine-<?= $i; ?>"><?= $domaineProfesseurItem['recommandation_domaine_name']; ?></label>
+                        </div>
+                    <?php $i++; endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
-    </div>
+        <div class="row message">
+            <div class="col-sm-12">
+                <div class="label">
+                    Commentaire
+                </div>
+                <div class="sub-label">
+                    Laissez votre commentaire
+                </div>
+                <textarea name="commentaire" id="" cols="30" rows="10" name="commentaire" placeholder="Votre commentaire ici..."></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <input type="submit" class="button primary submit-recommandation" value="Envoyer votre recommandation">
+            </div>
+        </div>
+    </form>
 </div>
 <?php
 get_footer();

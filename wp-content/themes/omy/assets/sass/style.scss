@@ -388,6 +388,11 @@ p{
 	}
 }
 
+.single-professeurs{
+	.footer{
+		margin-top: 0;
+	}
+}
 .end-footer{
 	text-align: center;
 	background: $color-clear;
@@ -558,7 +563,7 @@ p{
 	overflow: hidden;
 	position: relative;
 	padding: 40px 0 60px;
-	margin: 50px 0 0;
+	margin: 100px 0 0;
 	&-background{
 		position: absolute;
 		width: 100%;
@@ -640,7 +645,7 @@ p{
 	.author{
 		color: #FFF;
 		margin-top: 30px;
-		font-size: 18px;
+		font-size: 22px;
 		font-weight: 500;
 	}
 }
@@ -663,8 +668,16 @@ p{
 
 		th{
 			font-size: 18px;
-			font-weight: 600;
+			font-weight: 400;
 			padding: 15px 0;
+		}
+	}
+
+	tbody{
+		tr{
+			td{
+				font-size: 14px;
+			}
 		}
 	}
 }
@@ -677,3 +690,123 @@ p{
 	}
 }
 
+.strate-recommandations{
+	//background: rgba($color-clear, .1);
+	color: $black;
+	margin-bottom: 30px;
+
+	.recommendations-number{
+		font-size: 25px;
+		strong{
+			color: $color-primary;
+		}
+	}
+
+	.item-recommandation{
+		margin: 30px 0;
+		border-bottom: 1px solid #cdcdcd;
+		padding-bottom: 30px;
+
+		&:last-child{
+			border-bottom: 0;
+		}
+
+		.name-recommandation{
+			font-size: 22px;
+			margin-bottom: 0px;
+		}
+		.date-recommandation{
+			font-size: 13px;
+			color: #888;
+			font-weight: 400;
+			margin-bottom: 5px;
+		}
+		.status-recommandation{
+			font-weight: 500;
+			font-size: 18px;
+		}
+		.domaines-recommandation{
+			color: #888;
+			font-size: 13px;
+			font-weight: 400;
+			margin-bottom: 5px;
+		}
+
+		.message-recommandation{
+			margin-top: 15px;
+		}
+	}
+}
+
+.strate-add-recommendation{
+	background: rgba($color-clear, .1);
+	padding: 1px 0 100px;
+
+	.label{
+		color: #555;
+	}
+
+	.sub-label{
+		font-size: 18px;
+		color: #000;
+	}
+
+	.message{
+		margin-top: 20px;
+	}
+
+	textarea{
+		width: 100%;
+		resize: none;
+		border: 0;
+		background: transparent;
+		border-bottom: 1px solid #CCC;
+		height: 100px;
+		margin-top: 20px;
+		font-size: 16px;
+		outline: none;
+	}
+
+	.submit-recommandation{
+		width: auto;
+		padding: 12px 40px;
+		display: inline-block;
+		font-weight: 600;
+		font-size: 14px !important;
+		letter-spacing: .04em;
+		margin-top: 30px;
+	}
+
+	.container-select{
+		margin-bottom: 20px;
+		.select-filter{
+			font-size: 18px;
+		}
+	}
+
+	.domaine-checkbox{
+		display: inline-block;
+		margin-top: 10px;
+		input[type="checkbox"] {
+			height: 0;
+			width: 0;
+			opacity: 0;
+		}
+
+		label{
+			margin: 0 10px 5px 0;
+			cursor: pointer;
+			border: 1px solid #eee;
+			padding: 4px 15px;
+			font-size: 18px;
+			color: #666;
+			border-radius: 5px;
+
+			&.active{
+				background: rgba($color-primary, 1);
+				border: 1px solid rgba($color-primary, 1);
+				color: #fff;
+			}
+		}
+	}
+}

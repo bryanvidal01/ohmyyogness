@@ -21,6 +21,18 @@ function wp_custom_post_type() {
             'has_archive' => false,
         )
     );
+
+    register_post_type('recommendations',
+        array(
+            'labels'      => array(
+                'name'          => __('Recommendations', 'lsd_lang'),
+                'singular_name' => __('Recommendations', 'lsd_lang'),
+            ),
+            'public'      => true,
+            'has_archive' => false,
+            'publicly_queryable'  => 'false'
+        )
+    );
 }
 
 add_action('init', 'wp_custom_post_type');

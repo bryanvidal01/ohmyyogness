@@ -177,3 +177,141 @@ function get_teach_after_filter(){
 
     return $the_query;
 }
+
+
+
+
+function get_domaines_recommendations($recommendations) {
+    $recommendationsArray = [];
+    $i = 0;
+
+    if($recommendations){
+        foreach ($recommendations as $recommendationItem) {
+
+            $recommendationID = $recommendationItem->ID;
+            $recommendationDomaines = get_field('recommendation_domaines', $recommendationID);
+
+            if($recommendationDomaines){
+                foreach ($recommendationDomaines as $recommendationDomaineItem) {
+                    if(!array_key_exists($recommendationDomaineItem['recommendation_domaines_label'], $recommendationsArray)){
+                        $i++;
+                        $recommendationsArray[$recommendationDomaineItem['recommendation_domaines_label']] = 1;
+                    }else{
+                        $recommendationsArray[$recommendationDomaineItem['recommendation_domaines_label']] =  $recommendationsArray[$recommendationDomaineItem['recommendation_domaines_label']] + 1;
+                    }
+                }
+            }
+        }
+    }
+
+    arsort($recommendationsArray);
+
+    return $recommendationsArray;
+}
+
+function get_recommendation_status($recommendation_id = '') {
+    $status = '';
+    switch ($recommendation_id){
+        case 1:
+            $status = 'Je recommande vivement';
+        break;
+
+        case 2:
+            $status = 'Je recommande';
+        break;
+
+        case 3:
+            $status = 'Aucun avis';
+
+        case 4:
+            $status = 'Je ne recommande pas';
+
+        break;
+    }
+
+    return $status;
+}
+
+function sendRecommendation($profID) {
+
+    if(is_user_logged_in()){
+        $error = 0;
+
+        $domainesProfesseur = get_field('recommandation_domaines', $profID);
+
+        if(!$domainesProfesseur){
+            $domainesProfesseur = 0;
+        }
+
+        $recommandationStatus = (int) $_POST['recommandationStatus'];
+        $domaines = $_POST['domaine'];
+        $commentaire = $_POST['commentaire'];
+        $date = time() + 7200;
+        $currentUserID = get_current_user_id();
+
+        $recommandationNumberProf = get_field('posttype_prof_recommandation');
+
+        if(!is_int($recommandationStatus) || $recommandationStatus > 4 || $recommandationStatus < 0){
+            $error ++;
+        }else{
+            if($recommandationStatus < 2 ){
+                $recommandationNumberProf = $recommandationNumberProf + 1;
+            }
+        }
+
+        if($domaines){
+            $domaineImport = array();
+
+            $i=0; foreach ($domaines as $domaine){
+                $domaineFormated = stripslashes($domaine);
+
+                $correspondance = 0; foreach ($domainesProfesseur as $domaineProfesseur){
+                    $domaineProfesseurLabel = $domaineProfesseur['recommandation_domaine_name'];
+
+                    if($domaineProfesseurLabel == $domaineFormated){
+                        $correspondance ++;
+                    }
+                }
+
+                if($correspondance == 0){
+                    $error ++;
+                }else{
+                    $domaineImport[$i]['recommendation_domaines_label'] = $domaineFormated;
+                    $i++;
+                }
+            }
+        }
+
+        if(!$commentaire){
+            $error ++;
+            $commentaire = trim($commentaire);
+            $commentaire = stripslashes($commentaire);
+            $commentaire = htmlspecialchars($commentaire);
+        }
+
+        if($error == 0){
+            $newPost = array(
+                'post_title'    => 'Recommandation du ' . date('d/m/Y'),
+                'post_status'   => 'publish',
+                'post_type'     => 'recommendations'
+            );
+
+            $newPostInsert = wp_insert_post( $newPost );
+
+            if($newPostInsert){
+                update_field('recommendation_user_id', $currentUserID, $newPostInsert);
+                update_field('recommendation_prof_id', $profID, $newPostInsert);
+                update_field('recommendation_status', $recommandationStatus, $newPostInsert);
+                update_field('recommendation_date', $date, $newPostInsert);
+                update_field('recommendation_commentaire', $commentaire, $newPostInsert);
+                update_field('recommendation_domaines', $domaineImport, $newPostInsert);
+
+                // Update Prof
+                update_field('posttype_prof_recommandation', $recommandationNumberProf, $profID);
+            }
+        }else{
+            return array('status_code' => 400);
+        }
+
+    }
+}

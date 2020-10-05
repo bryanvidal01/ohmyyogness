@@ -1,89 +1,11 @@
 {
-    "key": "group_5f58c733e283a",
-    "title": "Champs (professeurs)",
+    "key": "group_5f7b2d7f13b55",
+    "title": "Champs (recommendations)",
     "fields": [
         {
-            "key": "field_5f7b43124e381",
-            "label": "Information professeur",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5f58c73ca882b",
-            "label": "Image du professeur",
-            "name": "posttype_prof_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5f59f4a6b5e23",
-            "label": "Mots clés",
-            "name": "posttype_prof_key_words",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5f5b95056795d",
-            "label": "URL du calendrier Google",
-            "name": "posttype_prof_calendar_url",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5f59fd4020f61",
-            "label": "Nombre de recommandations",
-            "name": "posttype_prof_recommandation",
+            "key": "field_5f7b2d8c39b52",
+            "label": "Utilisateur",
+            "name": "recommendation_user_id",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -102,10 +24,31 @@
             "step": ""
         },
         {
-            "key": "field_5f5bac60e32f2",
-            "label": "Adresse e-mail du professeur",
-            "name": "posttype_prof_calendar_email",
-            "type": "email",
+            "key": "field_5f7b3e79605ee",
+            "label": "Status de recommandation",
+            "name": "recommendation_status",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5f7b2e0139b53",
+            "label": "Professeur",
+            "name": "recommendation_prof_id",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -117,13 +60,16 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
-            "key": "field_5f7b43244e382",
-            "label": "Domaines recommandés",
-            "name": "",
-            "type": "tab",
+            "key": "field_5f7b2e2039b54",
+            "label": "Date",
+            "name": "recommendation_date",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -132,13 +78,16 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "key": "field_5f7b43344e383",
-            "label": "Les domaines que les utilisateurs pourront recommander",
-            "name": "recommandation_domaines",
+            "key": "field_5f7b2e4539b55",
+            "label": "Domaines",
+            "name": "recommendation_domaines",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -155,9 +104,9 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_5f7b43714e384",
-                    "label": "Nom de la recommandation",
-                    "name": "recommandation_domaine_name",
+                    "key": "field_5f7b30037448b",
+                    "label": "Label",
+                    "name": "recommendation_domaines_label",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -174,6 +123,25 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5f7b2e5d39b56",
+            "label": "Commentaire",
+            "name": "recommendation_commentaire",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -181,7 +149,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "professeurs"
+                "value": "recommendations"
             }
         ]
     ],
@@ -193,5 +161,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1601913904
+    "modified": 1601912550
 }

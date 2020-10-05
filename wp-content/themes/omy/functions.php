@@ -44,6 +44,18 @@ function scripts_site(){
     }
 }
 
+
+
+// Image Sizes
+add_image_size( 'galerieSize', 400, 400, true );
+add_image_size( 'imageStratePartners', 800, 800, true );
+
+add_image_size( 'presentationPortraitSize', 1000, 1200, true );
+add_image_size( 'presentationPaysageSize', 1920, 1080, true );
+
+
+
+
 //add_action('template_redirect', 'checkUserConnect'); // à mettre en commentaire pour MEP
 function checkUserConnect() {
   $isConnect = is_user_logged_in();
@@ -90,12 +102,4 @@ function lsd_get_template_part($folder = '', $slug, $name, $args = '') {
 
 
 register_nav_menu( 'primary', 'Primary Menu' );
-
-
-// Image Sizes
-add_image_size( 'galerieSize', 400, 400, true );
-add_image_size( 'imageStratePartners', 800, 800, true );
-
-add_image_size( 'presentationPortraitSize', 1000, 1200, true );
-add_image_size( 'presentationPaysageSize', 1920, 1080, true );
 

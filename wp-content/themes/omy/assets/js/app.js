@@ -1,8 +1,6 @@
 $(document).ready(function(){
 
     // Calendar
-
-    //Pagination
     var paginateCount = 8;
     var filterInit = "collectif";
 
@@ -52,6 +50,18 @@ $(document).ready(function(){
 
     }
 
+
+    // Checkbox recommandation
+
+    $('.domaine-checkbox input').change(function(){
+        var statusActif = $(this).prop('checked');
+
+        if(statusActif){
+            $(this).parent().find('label').addClass('active');
+        }else{
+            $(this).parent().find('label').removeClass('active');
+        }
+    });
 
 
 });
