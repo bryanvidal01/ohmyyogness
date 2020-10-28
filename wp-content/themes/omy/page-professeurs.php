@@ -17,6 +17,11 @@ $filterYogaStyle = get_terms('yoga_style',array(
     'hide_empty' => false,
 ));
 
+$filterYogaType = get_terms('yoga_type',array(
+    'hide_empty' => false,
+));
+
+
 $filterTeachStyle = get_terms('teach_style',array(
     'hide_empty' => false,
 ));
@@ -61,7 +66,7 @@ if($_POST){
         </div>
     </div>
     <form action="#" method="POST" class="row container-filters mx-auto">
-        <div class="col-sm-3 offset-1">
+        <div class="col-sm-3">
             <div class="container-select">
                 <div class="label">
                     Localisation
@@ -98,11 +103,11 @@ if($_POST){
         <div class="col-sm-3">
             <div class="container-select">
                 <div class="label">
-                    Style de Yoga
+                    Styles de Yoga
                 </div>
                 <select name="yogaStyle" id="" class="select-filter">
-                    <option value="">Choisissez un type</option>
-                    <?php if($filterTypeClasses): ?>
+                    <option value="">Choisissez un style</option>
+                    <?php if($filterYogaStyle): ?>
                         <?php foreach ($filterYogaStyle as $filterYogaStyleItem): ?>
                             <option value="<?php echo $filterYogaStyleItem->term_id; ?>" <?php echo ($_POST['yogaStyle']== $filterYogaStyleItem->term_id)? 'selected': ''; ?>>
                                 <?php echo $filterYogaStyleItem->name; ?>
@@ -112,10 +117,27 @@ if($_POST){
                 </select>
             </div>
         </div>
-        <div class="col-sm-3 offset-1">
+        <div class="col-sm-3">
             <div class="container-select">
                 <div class="label">
-                    Objectif
+                    Types de Yoga
+                </div>
+                <select name="yogaType" id="" class="select-filter">
+                    <option value="">Choisissez un type</option>
+                    <?php if($filterYogaType): ?>
+                        <?php foreach ($filterYogaType as $filterYogaTypeItem): ?>
+                            <option value="<?php echo $filterYogaTypeItem->term_id; ?>" <?php echo ($_POST['yogaType']== $filterYogaTypeItem->term_id)? 'selected': ''; ?>>
+                                <?php echo $filterYogaTypeItem->name; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="container-select">
+                <div class="label">
+                    Objectifs
                 </div>
                 <select name="goal" id="" class="select-filter">
                     <option value="">Choisissez votre objectif</option>
@@ -132,7 +154,7 @@ if($_POST){
         <div class="col-sm-3">
             <div class="container-select">
                 <div class="label">
-                    Style d'enseignement
+                    Styles d'enseignement
                 </div>
                 <select name="teachStyle" id="" class="select-filter">
                     <option value="">Choisissez un style</option>

@@ -144,6 +144,13 @@ function get_teach_after_filter(){
             'terms'    => $_POST['yogaStyle']
         ];
     }
+    if($_POST['yogaType']){
+        $args['tax_query'][0][] = [
+            'taxonomy' => 'yoga_type',
+            'field'    => 'id',
+            'terms'    => $_POST['yogaType']
+        ];
+    }
     if($_POST['goal']){
         $args['tax_query'][0][] = [
             'taxonomy' => 'goal',
@@ -251,11 +258,16 @@ function sendRecommendation($profID) {
 
         $recommandationNumberProf = get_field('posttype_prof_recommandation');
 
-        if(!is_int($recommandationStatus) || $recommandationStatus > 4 || $recommandationStatus < 0){
+        if(!is_int($recommandationStatus) || $recommandationStatus > 4 || $recommandationStatus < 1){
             $error ++;
         }else{
-            if($recommandationStatus < 2 ){
-                $recommandationNumberProf = $recommandationNumberProf + 1;
+            if($recommandationStatus < 3 ){
+                if($recommandationNumberProf){
+                    $recommandationNumberProf = $recommandationNumberProf + 1;
+                }else{
+                    $recommandationNumberProf = 1;
+                }
+
             }
         }
 
@@ -283,7 +295,7 @@ function sendRecommendation($profID) {
         }
 
         if(!$commentaire){
-            $error ++;
+            //$error ++;
             $commentaire = trim($commentaire);
             $commentaire = stripslashes($commentaire);
             $commentaire = htmlspecialchars($commentaire);
@@ -304,10 +316,18 @@ function sendRecommendation($profID) {
                 update_field('recommendation_status', $recommandationStatus, $newPostInsert);
                 update_field('recommendation_date', $date, $newPostInsert);
                 update_field('recommendation_commentaire', $commentaire, $newPostInsert);
-                update_field('recommendation_domaines', $domaineImport, $newPostInsert);
+
+                if($recommandationStatus < 3):
+                    update_field('recommendation_domaines', $domaineImport, $newPostInsert);
+                endif;
 
                 // Update Prof
                 update_field('posttype_prof_recommandation', $recommandationNumberProf, $profID);
+
+                $string = '<script type="text/javascript">';
+                $string .= 'window.location = "' . get_the_permalink() . '"';
+                $string .= '</script>';
+                echo $string;
             }
         }else{
             return array('status_code' => 400);

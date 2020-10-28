@@ -62,9 +62,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5f5b95056795d",
-            "label": "URL du calendrier Google",
-            "name": "posttype_prof_calendar_url",
+            "key": "field_5f7db252d6520",
+            "label": "Mantra",
+            "name": "posttype_prof_mantra",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -81,10 +81,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5f59fd4020f61",
-            "label": "Nombre de recommandations",
-            "name": "posttype_prof_recommandation",
-            "type": "number",
+            "key": "field_5f7db283d6521",
+            "label": "Enseigne le yoga depuis",
+            "name": "posttype_prof_years",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -97,15 +97,13 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "maxlength": ""
         },
         {
-            "key": "field_5f5bac60e32f2",
-            "label": "Adresse e-mail du professeur",
-            "name": "posttype_prof_calendar_email",
-            "type": "email",
+            "key": "field_5f7db75e1b287",
+            "label": "Spécialité(s)",
+            "name": "posttype_prof_specialities",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -117,23 +115,8 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_5f7b43244e382",
-            "label": "Domaines recommandés",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5f7b43344e383",
@@ -174,6 +157,236 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5f59fd4020f61",
+            "label": "Nombre de recommandations",
+            "name": "posttype_prof_recommandation",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "hidden",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5f7db37fd6522",
+            "label": "En video",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f7db3a3d6524",
+            "label": "URL de la vidéo \"les dessous des profs\"",
+            "name": "posttype_prof_video_1",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f7db3d5d6525",
+            "label": "URL de la vidéo \"10 minutes de cours avec ce prof\"",
+            "name": "posttype_prof_video_2",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f7db403d6526",
+            "label": "Contenu sur ce prof",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f7db424d6527",
+            "label": "Titre de la section",
+            "name": "posttype_prof_content_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f7db43cd6528",
+            "label": "Texte de la section",
+            "name": "posttype_prof_content_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5f7b43244e382",
+            "label": "Calendrier",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f5b95056795d",
+            "label": "URL du calendrier Google",
+            "name": "posttype_prof_calendar_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f5bac60e32f2",
+            "label": "Adresse e-mail du professeur",
+            "name": "posttype_prof_calendar_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5f7db459d6529",
+            "label": "Citation",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f7db467d652a",
+            "label": "La citation",
+            "name": "posttype_prof_citation_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5f7db481d652b",
+            "label": "Auteur de la citation",
+            "name": "posttype_prof_citation_author",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -193,5 +406,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1601913904
+    "modified": 1602078475
 }

@@ -29,7 +29,12 @@ $font-hand: 'playlistscript';
 p{
 	a{
 		color: $color-primary;
-		display: inline-block;
+		display: inline;
+
+		&:hover{
+			color: $color-primary;
+			text-decoration: underline !important;
+		}
 	}
 }
 
@@ -52,7 +57,7 @@ p{
 }
 
 p{
-	line-height: 24px;
+	line-height: 29px;
 	color: $black;
 	&.white{
 		color: #FFF;
@@ -64,6 +69,8 @@ p{
 	display: inline-block;
 	font-weight: 600;
 	font-size: 14px;
+	box-shadow: none;
+	border: 0;
 	letter-spacing: .04em;
 
 	&:hover{
@@ -71,13 +78,13 @@ p{
 	}
 
 	&.primary{
-		background: $color-primary;
+		background: $color-clear;
 		color: #FFF;
 		border-radius: 5px;
 		transition: .3s;
 
 		&:hover{
-			background: #e88872;
+			background: rgba($color-clear, .6);
 		}
 	}
 
@@ -101,7 +108,7 @@ p{
 }
 
 .marge-top{
-	margin-top: 30px;
+	margin-top: 30px !important;
 }
 .marge-top-sup{
 	margin-top: 60px;
@@ -124,6 +131,7 @@ p{
 
 // Components
 .teacher{
+	display: block;
 	img{
 		display: block;
 		max-width: 100%;
@@ -452,7 +460,6 @@ p{
 }
 
 // Professeurs
-
 .container-filters{
 	//border: 1px solid #ddd;
 	padding: 60px 30px;
@@ -611,7 +618,7 @@ p{
 
 
 .strate-citation{
-	background: $color-primary;
+	background: $color-clear;
 	padding: 120px 0 100px;
 	margin-top: 50px;
 
@@ -645,8 +652,9 @@ p{
 	.author{
 		color: #FFF;
 		margin-top: 30px;
-		font-size: 22px;
+		font-size: 28px;
 		font-weight: 500;
+		font-family: $font-hand;
 	}
 }
 
@@ -782,6 +790,18 @@ p{
 		.select-filter{
 			font-size: 18px;
 		}
+
+		&.require{
+			select{
+				border-bottom: 1px solid $color-primary;
+			}
+
+			&:after{
+				content: 'Ce champs est requis';
+				font-size: 12px;
+				color: $color-primary;
+			}
+		}
 	}
 
 	.domaine-checkbox{
@@ -808,5 +828,157 @@ p{
 				color: #fff;
 			}
 		}
+	}
+}
+
+// Account
+
+.woocommerce-MyAccount-content{
+	min-height: 60vh;
+	padding: 0 30px;
+}
+
+.container-register, .lost_reset_password{
+	min-height: 60vh;
+	margin-top: 60px;
+}
+
+.lost_reset_password{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.woocommerce form.register{
+	background: #F7F7F7;
+	border: 0 !important;
+	padding-bottom: 40px !important;
+}
+
+.woocommerce-lost-password{
+	.woocommerce{
+		margin: 0 auto;
+	}
+}
+
+.title-nav-account{
+	font-size: 22px;
+	border-bottom: 1px solid rgba(#000, .1);
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.title-account{
+	font-size: 30px;
+	border-bottom: 1px solid rgba(#000, .1);
+	padding-bottom: 10px;
+	padding-top: 30px;
+}
+
+.woocommerce-MyAccount-navigation{
+	font-size: 17px;
+	background: rgba($color-clear, .2);
+	padding: 30px;
+	line-height: 28px;
+	font-weight: 500;
+
+	ul{
+		margin-bottom: 0;
+		li{
+
+			&.is-active{
+				a{
+					color: $color-primary;
+					font-weight: 500;
+				}
+			}
+			a{
+				color: #666;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+
+.woocommerce-EditAccountForm.edit-account{
+	input{
+		width: 100%;
+	}
+
+	.reset-password{
+		margin-top: 30px;
+
+		label{
+			width: 100%;
+			display: block;
+		}
+	}
+
+
+}
+
+.woocommerce form .form-row label{
+	margin-bottom: 0;
+}
+
+.woocommerce form{
+	input{
+		border-radius: 5px;
+		padding: 10px;
+		border: 1px solid rgba(#000, .2);
+	}
+}
+
+.woocommerce form .form-row .required{
+	color: $color-primary !important;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
+	background-color: $color-clear !important;
+	color: #FFF !important;
+	border-radius: 5px !important;;
+	transition: .3s !important;
+	padding: 18px 40px !important;
+	display: inline-block !important;
+	font-weight: 600 !important;
+	font-size: 14px !important;
+	letter-spacing: .04em !important;
+}
+
+
+.woocommerce-notices-wrapper{
+	.woocommerce-message{
+		border-color: $color-primary;
+
+		&:before{
+			color: $color-primary;
+		}
+	}
+}
+
+#customer_login{
+	.password-input{
+		width: 100%;
+	}
+
+	.woocommerce-form-login__rememberme{
+		display: block;
+		width: 100%;
+		margin-bottom: 5px;
+	}
+}
+
+
+.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register{
+	margin: 0 !important;
+}
+
+
+#customer_login, #customer_register{
+	margin-top: 40px;
+	h2{
+		font-size: 22px;
+		font-weight: 400;
+		margin-bottom: 12px;
 	}
 }

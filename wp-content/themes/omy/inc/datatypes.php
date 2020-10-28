@@ -87,6 +87,22 @@ function wp_register_taxonomy() {
     register_taxonomy( 'yoga_style', 'professeurs', $args );
 
     $labels = array(
+        'name'                       => _x( 'Type de yoga', 'taxonomy general name' ),
+        'singular_name'              => _x( 'Type de yoga', 'taxonomy singular name' ),
+        'menu_name'                  => __( 'Type de yoga' )
+    );
+
+    $args = array(
+        'hierarchical'          => true,
+        'labels'                => $labels,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'query_var'             => true,
+    );
+
+    register_taxonomy( 'yoga_type', 'professeurs', $args );
+
+    $labels = array(
         'name'                       => _x( 'Style d’enseignement', 'taxonomy general name' ),
         'singular_name'              => _x( 'Style d’enseignement', 'taxonomy singular name' ),
         'menu_name'                  => __( 'Style d’enseignement' )

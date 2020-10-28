@@ -25,94 +25,6 @@
             "ui": 1
         },
         {
-            "key": "field_5f0829660e4b2",
-            "label": "Page partenaires",
-            "name": "params_page_partenaires",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
-            "key": "field_5f0829790e4b3",
-            "label": "Page foire aux questions",
-            "name": "params_page_faq",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
-            "key": "field_5f08298e0e4b4",
-            "label": "Page clients",
-            "name": "params_page_clients",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
-            "key": "field_5f0829980e4b5",
-            "label": "Page votre évènement",
-            "name": "params_page_event",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
             "key": "field_5f0829b10e4b6",
             "label": "Page contact",
             "name": "params_page_contact",
@@ -135,9 +47,9 @@
             "ui": 1
         },
         {
-            "key": "field_5f12e5774c26c",
-            "label": "Page configurateur",
-            "name": "params_page_configurateur",
+            "key": "field_5f7dd3b65f675",
+            "label": "Page professeurs",
+            "name": "params_page_professeur",
             "type": "post_object",
             "instructions": "",
             "required": 0,
@@ -147,9 +59,27 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5f885aa9e7976",
+            "label": "Page compte",
+            "name": "params_page_compte",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
             "taxonomy": "",
             "allow_null": 0,
             "multiple": 0,
@@ -174,5 +104,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1595073925
+    "modified": 1602771640
 }

@@ -14,6 +14,10 @@ define('PAGE_CONTACT', get_field('params_page_contact', 'option'));
 define('PAGE_CONFIGURATEUR', get_field('params_page_configurateur', 'option'));
 
 
+define('PAGE_PROFESSEURS', get_field('params_page_professeur', 'option'));
+define('PAGE_COMPTE', get_field('params_page_compte', 'option'));
+
+
 
 
 require_once( __DIR__ . '/inc/datatypes.php');
@@ -102,4 +106,18 @@ function lsd_get_template_part($folder = '', $slug, $name, $args = '') {
 
 
 register_nav_menu( 'primary', 'Primary Menu' );
+
+
+function remove_menu_items() {
+    global $menu;
+    $restricted = array(__('Recommendations'), __('WooCommerce'), __('Produits'), __('Marketing'), __('Statistiques'), __('Articles'), __('Médias'));
+    end ($menu);
+    while (prev($menu)){
+        $value = explode(' ',$menu[key($menu)][0]);
+
+        if (in_array($value[0] != NULL?$value[0]:"" , $restricted)){
+            unset($menu[key($menu)]);}
+    }
+}
+add_action('admin_menu', 'remove_menu_items');
 

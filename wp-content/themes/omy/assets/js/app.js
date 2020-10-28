@@ -55,7 +55,6 @@ $(document).ready(function(){
 
     $('.domaine-checkbox input').change(function(){
         var statusActif = $(this).prop('checked');
-
         if(statusActif){
             $(this).parent().find('label').addClass('active');
         }else{
@@ -63,6 +62,22 @@ $(document).ready(function(){
         }
     });
 
+    $('#send-recommandation').submit(function(){
+        if($('#status-recommendation').val() == 0){
+            event.preventDefault();
+            $('#status-recommendation').parent().addClass('require');
+        }
+    });
+
+    $('#status-recommendation').change(function(){
+        var element = jQuery(this);
+
+        if(element.val() > 2 || element.val() == 0 ){
+            $('.recommendation-domaine-list').css('display','none');
+        }else{
+            $('.recommendation-domaine-list').css('display','block');
+        }
+    });
 
 });
 
@@ -76,9 +91,4 @@ window.onload = function() {
         autoplay: true,
         arrows: false,
     });
-
-
-
-
-
 };

@@ -40,7 +40,7 @@
                 <div class="navigation">
                     <?php echo wp_nav_menu(); ?>
                 </div>
-                <a href="#" class="account-link">
+                <a href="<?php echo get_the_permalink(PAGE_COMPTE); ?>" class="account-link">
                     <?php lsd_get_template_part('icons', 'icon', 'user'); ?>
                     Mon compte
                 </a>
