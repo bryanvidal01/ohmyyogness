@@ -114,8 +114,6 @@ function dateMonthInFr( $date ) {
 
 function get_teach_after_filter(){
 
-    update_field( 'posttype_prof_recommandation', '', 144 );
-
     $args = array(
         'post_type' => 'professeurs',
         'meta_key'			=> 'posttype_prof_recommandation',

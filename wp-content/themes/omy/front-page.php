@@ -40,27 +40,28 @@ get_header();
                 <div class="title">
                     Trouvez le professeur qui correspond à vos attentes
                 </div>
+                <?php
+                $resultsProfs = get_teach_after_filter();
+                ?>
 
+
+                <?php
+                if ( isset( $resultsProfs ) && $resultsProfs->have_posts() ): ?>
                 <div class="slider">
-                    <div>
-                        <?php lsd_get_template_part('bloc', 'bloc', 'teacher'); ?>
-                    </div>
-                    <div>
-                        <?php lsd_get_template_part('bloc', 'bloc', 'teacher'); ?>
-                    </div>
-                    <div>
-                        <?php lsd_get_template_part('bloc', 'bloc', 'teacher'); ?>
-                    </div>
-                    <div >
-                        <?php lsd_get_template_part('bloc', 'bloc', 'teacher'); ?>
-                    </div>
-                    <div>
-                        <?php lsd_get_template_part('bloc', 'bloc', 'teacher'); ?>
-                    </div>
-                    <div>
-                        <?php lsd_get_template_part('bloc', 'bloc', 'teacher'); ?>
-                    </div>
+                    <?php while ( $resultsProfs->have_posts() ):
+                        $resultsProfs->the_post();
+                        $postID = get_the_id();
+                        ?>
+                        <div>
+                            <?php lsd_get_template_part('bloc', 'bloc', 'teacher', $postID); ?>
+                        </div>
+                    <?php endwhile; ?>
                 </div>
+                <?php endif;
+
+                wp_reset_postdata();
+                ?>
+                
                 <div class="marge-top text-center">
                     <a href="" class="button primary">
                         Trouvez le prod' qui vous convient

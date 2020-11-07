@@ -54,7 +54,12 @@ function scripts_site(){
 add_image_size( 'galerieSize', 400, 400, true );
 add_image_size( 'imageStratePartners', 800, 800, true );
 
+add_image_size( 'imagePushBlog', 400, 500, true );
 add_image_size( 'presentationPortraitSize', 1000, 1200, true );
+add_image_size( '800_1000', 800, 1000, true );
+add_image_size( '1000_600', 1000, 600, true );
+add_image_size( '1000_600', 1000, 600, true );
+add_image_size( '800_500', 800, 500, true );
 add_image_size( 'presentationPaysageSize', 1920, 1080, true );
 
 
@@ -110,7 +115,7 @@ register_nav_menu( 'primary', 'Primary Menu' );
 
 function remove_menu_items() {
     global $menu;
-    $restricted = array(__('Recommendations'), __('WooCommerce'), __('Produits'), __('Marketing'), __('Statistiques'), __('Articles'), __('Médias'));
+    $restricted = array(__('Recommendations'), __('WooCommerce'), __('Produits'), __('Marketing'), __('Statistiques'), __('Médias'));
     end ($menu);
     while (prev($menu)){
         $value = explode(' ',$menu[key($menu)][0]);
