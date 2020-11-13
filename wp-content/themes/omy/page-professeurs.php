@@ -62,7 +62,7 @@ if($_POST){
 <div class="container">
     <div class="row">
         <div class="col-sm-12 text-center marge-top-sup">
-            <h1 class="title">Trouver le professeur qui correspond à vos attentes</h1>
+            <h1 class="title">Rechercher un professeur</h1>
         </div>
     </div>
     <form action="#" method="POST" class="row container-filters mx-auto">
@@ -73,7 +73,7 @@ if($_POST){
                 </div>
                 <div class="fake-select">
                     <div class="placeholder">
-                        Choisissez une localisation
+                        Choisissez
                     </div>
                     <div class="fake-select-content">
                     <?php if($filterLocation): ?>
@@ -95,7 +95,7 @@ if($_POST){
                 </div>
                 <div class="fake-select">
                     <div class="placeholder">
-                        Choisissez un type de cours
+                        Choisissez
                     </div>
                     <div class="fake-select-content">
                     <?php if($filterTypeClasses): ?>
@@ -118,7 +118,7 @@ if($_POST){
 
                 <div class="fake-select">
                     <div class="placeholder">
-                        Choisissez un style de yoga
+                        Choisissez
                     </div>
                     <div class="fake-select-content">
                     <?php if($filterYogaStyle): ?>
@@ -140,7 +140,7 @@ if($_POST){
                 </div>
                 <div class="fake-select">
                     <div class="placeholder">
-                        Choisissez un type de Yoga
+                        Choisissez
                     </div>
                     <div class="fake-select-content">
                     <?php if($filterYogaType): ?>
@@ -162,7 +162,7 @@ if($_POST){
                 </div>
                 <div class="fake-select">
                     <div class="placeholder">
-                        Choisissez un objectif
+                        Choisissez
                     </div>
                     <div class="fake-select-content">
                     <?php if($filterGoal): ?>
@@ -184,7 +184,7 @@ if($_POST){
                 </div>
                 <div class="fake-select">
                     <div class="placeholder">
-                        Choisissez style
+                        Choisissez
                     </div>
                     <div class="fake-select-content">
                     <?php if($filterTeachStyle): ?>
@@ -206,7 +206,7 @@ if($_POST){
                 </div>
                 <div class="fake-select">
                     <div class="placeholder">
-                        Choisissez votre niveau
+                        Choisissez
                     </div>
                     <div class="fake-select-content">
                         <?php if($filterLevel): ?>

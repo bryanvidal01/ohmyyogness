@@ -7,7 +7,7 @@
     if($teacherImage){
         $teacherImageURL = lsd_get_thumb($teacherImage, '400_400');
     }
-    $yogaStyle = get_the_terms($postID, 'yoga_style');
+    $yogaStyle = get_the_terms($postID, 'yoga_type');
     $teachStyle = get_the_terms($postID, 'teach_style');
 
 
@@ -15,7 +15,7 @@
 <a href="<?php echo get_the_permalink(); ?>" class="teacher text-center">
     <div class="image">
         <?php if(isset($teacherImageURL)): ?>
-        <img src="<?php echo $teacherImageURL; ?>" alt="">
+        <img src="<?php echo $teacherImageURL; ?>" alt="" width="100%">
         <?php endif; ?>
         <div class="info-sup">
             <?php if($teachStyle): ?>

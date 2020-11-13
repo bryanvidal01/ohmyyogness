@@ -5,17 +5,12 @@ define('HOME_URL', get_home_url());
 define('AJAX_URL', THEME_URL . 'ajax-min.php');
 
 //Correspondance de page
-define('PAGE_PRESENTATION', get_field('params_page_presentation', 'option'));
-define('PAGE_PARTENAIRES', get_field('params_page_partenaires', 'option'));
-define('PAGE_FAQ', get_field('params_page_faq', 'option'));
-define('PAGE_CLIENTS', get_field('params_page_clients', 'option'));
-define('PAGE_EVENTS', get_field('params_page_event', 'option'));
-define('PAGE_CONTACT', get_field('params_page_contact', 'option'));
-define('PAGE_CONFIGURATEUR', get_field('params_page_configurateur', 'option'));
 
 
 define('PAGE_PROFESSEURS', get_field('params_page_professeur', 'option'));
 define('PAGE_COMPTE', get_field('params_page_compte', 'option'));
+define('PAGE_BLOG', get_field('params_page_blog', 'option'));
+define('PAGE_ABOUT', get_field('params_page_presentation', 'option'));
 
 
 

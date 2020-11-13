@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     // Calendar
-    var paginateCount = 8;
+    var paginateCount = 5;
     var filterInit = "collectif";
 
 
@@ -25,7 +25,7 @@ $(document).ready(function(){
     $('.moreCalendar').click(function(event){
         event.preventDefault();
 
-        filterInit = $('.navigation-calendar a.active').attr('href');
+        filterInit = 'collectif';
         initCalendar(filterInit, paginateCount);
 
     });

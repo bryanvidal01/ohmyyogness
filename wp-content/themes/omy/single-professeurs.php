@@ -37,6 +37,13 @@ if($teacherImage){
 
 
 // Video
+
+$paramsBackgroundVideo = get_field('params_background_video', 'option');
+
+if($paramsBackgroundVideo){
+    $paramsBackgroundVideoURL = lsd_get_thumb($paramsBackgroundVideo, '192_1080');
+}
+
 $profVideo1 = get_field('posttype_prof_video_1');
 if($profVideo1){
     parse_str( parse_url( $profVideo1, PHP_URL_QUERY ), $profVideo1Array );
@@ -62,7 +69,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
     <div class="row">
         <div class="col-sm-12">
             <a href="<?= get_the_permalink(PAGE_PROFESSEURS); ?>" class="link-back">
-                Retour à la liste des prof's
+                Retour vers la liste des professeurs
             </a>
         </div>
         <div class="col-sm-6">
@@ -160,16 +167,16 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
 
 <?php if(isset($profVideo1Array) || isset($profVideo2Array)): ?>
 <div class="strate-video-prof">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-video.jpg" class="strate-video-prof-background" alt="">
+    <img src="<?= (isset($paramsBackgroundVideoURL))? $paramsBackgroundVideoURL : ''; ?>" class="strate-video-prof-background" alt="">
     <div class="container strate-video-prof-container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="title-hand white">
+                <div class="title big white text-center title-sans-serif">
                     En vidéo
                 </div>
             </div>
             <?php if(isset($profVideo1Array)): ?>
-            <div class="col-sm-6">
+            <div class="col-sm-6 mx-auto">
                 <div class="title">
                     Les dessous des profs’
                 </div>
@@ -177,7 +184,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
             </div>
             <?php endif; ?>
             <?php if(isset($profVideo2Array)): ?>
-            <div class="col-sm-6">
+            <div class="col-sm-6 mx-auto">
                 <div class="title">
                     5 minutes sur le tapis <!--avec --><?php /*echo get_the_title(); */?>
                 </div>
@@ -194,7 +201,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="title">
+                <div class="title big title-sans-serif">
                     <?= $profContentTitle; ?>
                 </div>
                 <?= $profContentText; ?>
@@ -211,31 +218,32 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
             <h1 class="title-hand">Planning des cours</h1>
         </div>
 
-        <div class="navigation-calendar text-center col-sm-12">
+        <!--<div class="navigation-calendar text-center col-sm-12">
             <a href="collectif" class="button primary active">Cours collectif</a>
             <a href="particulier" class="button primary">Cours particulier</a>
-        </div>
+        </div>-->
 
         <div class="col-sm-12">
             <table class="calendar-dates">
                 <thead>
                     <tr>
-                        <th width="15%">
+                        <th width="">
                             Date
                         </th>
-                        <th width="20%">
+                        <th width="">
                             Début du cours
                         </th>
-                        <th width="20%">
+                        <th width="">
                             Fin du cours
                         </th>
-                        <th width="15%">
+                        <th width="">
                             Niveau
                         </th>
-                        <th width="25%">
-                            Lieu
+                        <th width="">
+                            Type de yoga
                         </th>
-                        <th width="10%">
+                        <th width="">
+                            Lieu
                         </th>
                     </tr>
                 </thead>
@@ -275,6 +283,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                                 $levelClasse = get_field('post_combinaison_level', $postID);
                                 $linkRedirect = get_field('post_combinaison_redirection', $postID);
                                 $lieuEvent = get_field('post_combinaison_lieu', $postID);
+                                $typeYoga = get_field('post_combinaison_type_yoga', $postID);
                             endif;
 
 
@@ -298,19 +307,22 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                                     <?php endif; ?>
                                 </td>
                                 <td>
+                                    <?= ($typeYoga)? $typeYoga : 'Non défini'; ?>
+                                </td>
+                                <td>
                                     <?php if($lieuEvent): ?>
                                         <?php echo $lieuEvent; ?>
                                     <?php else: ?>
                                         Non défini
                                     <?php endif; ?>
                                 </td>
-                                <td width="20%" class="text-right">
-                                    <?php if($linkRedirect): ?>
-                                        <a class="button primary" target="_blank" href="<?php echo $linkRedirect; ?>">S'inscrire</a>
-                                    <?php elseif($emailTeacher): ?>
-                                        <a class="button primary" href="mailto:<?php echo $emailTeacher; ?>">S'inscrire</a>
-                                    <?php endif; ?>
-                                </td>
+                                <!--<td width="20%" class="text-right">
+                                    <?php /*if($linkRedirect): */?>
+                                        <a class="button primary" target="_blank" href="<?php /*echo $linkRedirect; */?>">S'inscrire</a>
+                                    <?php /*elseif($emailTeacher): */?>
+                                        <a class="button primary" href="mailto:<?php /*echo $emailTeacher; */?>">S'inscrire</a>
+                                    <?php /*endif; */?>
+                                </td>-->
                             </tr>
                         <?php endif;
                     endforeach;
@@ -329,7 +341,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
 <div class="strate-citation">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-8 mx-auto text-center">
                 <?php if($profCitationText): ?>
                 <div class="citation">
                 <?= $profCitationText; ?>

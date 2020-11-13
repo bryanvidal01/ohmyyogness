@@ -63,7 +63,7 @@
         },
         {
             "key": "field_5f7db252d6520",
-            "label": "Mantra",
+            "label": "Sa spécialité",
             "name": "posttype_prof_mantra",
             "type": "text",
             "instructions": "",
@@ -213,7 +213,7 @@
         },
         {
             "key": "field_5f7db3d5d6525",
-            "label": "URL de la vidéo \"10 minutes de cours avec ce prof\"",
+            "label": "URL de la vidéo \"5 min sur le tapis\"",
             "name": "posttype_prof_video_2",
             "type": "url",
             "instructions": "",
@@ -406,5 +406,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1602078475
+    "modified": 1605223868
 }
