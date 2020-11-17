@@ -60,6 +60,70 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5fb43a033c33b",
+            "label": "Lien Facebook",
+            "name": "params_facebook_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fb43a233c33c",
+            "label": "Lien Instagram",
+            "name": "params_instagram_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fb43a333c33d",
+            "label": "Lien Twitter",
+            "name": "params_twitter_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fb43a4f3c33e",
+            "label": "Lien Youtube",
+            "name": "params_youtube_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -79,5 +143,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1594047939
+    "modified": 1605647197
 }

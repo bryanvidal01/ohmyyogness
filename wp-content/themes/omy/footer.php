@@ -1,5 +1,8 @@
 <?php
-
+    $params_facebook_link = get_field('params_facebook_link', 'option');
+    $params_instagram_link = get_field('params_instagram_link', 'option');
+    $params_twitter_link = get_field('params_twitter_link', 'option');
+    $params_youtube_link = get_field('params_youtube_link', 'option');
 ?>
     <footer class="footer">
         <div class="container">
@@ -19,26 +22,34 @@
                         Réseaux Sociaux
                     </span>
                     <ul class="social-list">
+                        <?php if($params_facebook_link): ?>
                         <li>
-                            <a href="">
+                            <a href="<?= $params_facebook_link; ?>">
                                 <?php lsd_get_template_part('icons', 'icon', 'facebook'); ?>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if($params_instagram_link): ?>
                         <li>
-                            <a href="">
+                            <a href="<?= $params_instagram_link; ?>">
                                 <?php lsd_get_template_part('icons', 'icon', 'instagram'); ?>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if($params_twitter_link): ?>
                         <li>
-                            <a href="">
+                            <a href="<?= $params_twitter_link; ?>">
                                 <?php lsd_get_template_part('icons', 'icon', 'twitter'); ?>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if($params_youtube_link): ?>
                         <li>
-                            <a href="">
+                            <a href="<?= $params_youtube_link; ?>">
                                 <?php lsd_get_template_part('icons', 'icon', 'youtube'); ?>
                             </a>
                         </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
 

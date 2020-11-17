@@ -121,53 +121,53 @@ function get_teach_after_filter(){
         'order'				=> 'DESC',
     );
 
-    if($_POST['location']){
+    if($_GET['location']){
         $args['tax_query'][0][] = [
             'taxonomy' => 'location',
             'field'    => 'id',
-            'terms'    => $_POST['location']
+            'terms'    => $_GET['location']
         ];
     }
-    if($_POST['typeClasses']){
+    if($_GET['typeClasses']){
         $args['tax_query'][0][] = [
             'taxonomy' => 'type_classes',
             'field'    => 'id',
-            'terms'    => $_POST['typeClasses']
+            'terms'    => $_GET['typeClasses']
         ];
     }
-    if($_POST['yogaStyle']){
+    if($_GET['yogaStyle']){
         $args['tax_query'][0][] = [
             'taxonomy' => 'yoga_style',
             'field'    => 'id',
-            'terms'    => $_POST['yogaStyle']
+            'terms'    => $_GET['yogaStyle']
         ];
     }
-    if($_POST['yogaType']){
+    if($_GET['yogaType']){
         $args['tax_query'][0][] = [
             'taxonomy' => 'yoga_type',
             'field'    => 'id',
-            'terms'    => $_POST['yogaType']
+            'terms'    => $_GET['yogaType']
         ];
     }
-    if($_POST['goal']){
+    if($_GET['goal']){
         $args['tax_query'][0][] = [
             'taxonomy' => 'goal',
             'field'    => 'id',
-            'terms'    => $_POST['goal']
+            'terms'    => $_GET['goal']
         ];
     }
-    if($_POST['teachStyle']){
+    if($_GET['teachStyle']){
         $args['tax_query'][0][] = [
             'taxonomy' => 'teach_style',
             'field'    => 'id',
-            'terms'    => $_POST['teachStyle']
+            'terms'    => $_GET['teachStyle']
         ];
     }
-    if($_POST['level']){
+    if($_GET['level']){
         $args['tax_query'][0][] = [
             'taxonomy' => 'level',
             'field'    => 'id',
-            'terms'    => $_POST['level']
+            'terms'    => $_GET['level']
         ];
     }
 

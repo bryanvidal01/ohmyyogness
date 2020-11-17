@@ -54,21 +54,6 @@ function wp_register_taxonomy() {
 
     register_taxonomy( 'location', 'professeurs', $args );
 
-    $labels = array(
-        'name'                       => _x( 'Type de cours', 'taxonomy general name' ),
-        'singular_name'              => _x( 'Type de cours', 'taxonomy singular name' ),
-        'menu_name'                  => __( 'Type de cours' )
-    );
-
-    $args = array(
-        'hierarchical'          => true,
-        'labels'                => $labels,
-        'show_ui'               => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-    );
-
-    register_taxonomy( 'type_classes', 'professeurs', $args );
 
     $labels = array(
         'name'                       => _x( 'Style de yoga', 'taxonomy general name' ),

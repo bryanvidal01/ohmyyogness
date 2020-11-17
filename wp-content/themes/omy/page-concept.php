@@ -172,7 +172,7 @@ $page_concept_steps_button_label = get_field('page_concept_steps_button_label');
                     </div>
                 <?php endif; ?>
                 <div class="icon">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar.svg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team.svg" alt="">
                 </div>
             </div>
         </div>
@@ -196,7 +196,7 @@ $page_concept_steps_button_label = get_field('page_concept_steps_button_label');
                     </div>
                 <?php endif; ?>
                 <div class="icon">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team.svg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/calendar.svg" alt="">
                 </div>
             </div>
         </div>

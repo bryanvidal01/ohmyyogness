@@ -107,6 +107,18 @@ $(document).ready(function(){
         }
     });
 
+
+    // Back button
+
+    $('.link-back').click(function(event){
+
+        if(document.referrer.search("les-professeurs") > 0){
+            event.preventDefault();
+            window.history.back();
+        }
+        //
+    })
+
 });
 
 window.onload = function() {

@@ -172,7 +172,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
         <div class="row">
             <div class="col-sm-12">
                 <div class="title big white text-center title-sans-serif">
-                    En vidéo
+                    Son univers en vidéo
                 </div>
             </div>
             <?php if(isset($profVideo1Array)): ?>
@@ -227,22 +227,22 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
             <table class="calendar-dates">
                 <thead>
                     <tr>
-                        <th width="">
+                        <th width="20%">
                             Date
                         </th>
-                        <th width="">
+                        <th width="20%">
                             Début du cours
                         </th>
-                        <th width="">
+                        <th width="20%">
                             Fin du cours
                         </th>
-                        <th width="">
+                        <th width="20%">
                             Niveau
                         </th>
-                        <th width="">
+                        <th width="20%">
                             Type de yoga
                         </th>
-                        <th width="">
+                        <th width="10%" class="text-right">
                             Lieu
                         </th>
                     </tr>
@@ -309,7 +309,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                                 <td>
                                     <?= ($typeYoga)? $typeYoga : 'Non défini'; ?>
                                 </td>
-                                <td>
+                                <td class="text-right">
                                     <?php if($lieuEvent): ?>
                                         <?php echo $lieuEvent; ?>
                                     <?php else: ?>

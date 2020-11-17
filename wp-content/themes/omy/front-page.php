@@ -31,7 +31,7 @@ $articles_blog = get_field('articles_blog');
 <div class="hero homepage">
     <img src="<?= (isset($image_background_URL))? $image_background_URL : '' ;?>" alt="" class="background-strate">
 
-    <div class="inner-hero white">
+    <div class="inner-hero white front-page">
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 mx-auto text-center">
@@ -138,6 +138,7 @@ $articles_blog = get_field('articles_blog');
         </div>
     </div>
 </div>
+
 
 <?php
 get_footer();
