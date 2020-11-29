@@ -13,6 +13,7 @@ if($image){
     $imageURL = lsd_get_thumb($image, 'presentationPaysageSize');
 }
 $textDescription = get_field('post_article_description');
+$professeurInterview = get_field('post_article_prof');
 
 ?>
 <div class="hero not-homepage">
@@ -30,6 +31,12 @@ $textDescription = get_field('post_article_description');
                         <p><?php echo $textDescription; ?></p>
                     </div>
                     <?php endif; ?>
+                    <?php if($professeurInterview): ?>
+                    <p>Interview de <strong><?= get_the_title($professeurInterview); ?></strong></p>
+                    <a href="<?= get_the_permalink($professeurInterview); ?>" class="button primary">
+                        Découvrir ce professeur
+                    </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -40,55 +47,14 @@ $textDescription = get_field('post_article_description');
     <div class="container container-strates">
         <?php while ( have_rows('post_strates') ) : the_row(); ?>
 
-            <?php
 
-            if(get_row_layout() == 'strate_text_two_image'):
-                $bigTitleStrateTwoImageText = get_sub_field('strate_text_two_image_big_title');
-                $titleStrateTwoImageText = get_sub_field('strate_text_two_image_title');
-                $textStrateTwoImageText = get_sub_field('strate_text_two_image_text');
-                $imageOneIDStrateTwoImageText = get_sub_field('strate_text_two_image_image_1');
-                $imageOneURLStrateTwoImageText = '';
-                if($imageOneIDStrateTwoImageText):
-                    $imageOneURLStrateTwoImageText = lsd_get_thumb($imageOneIDStrateTwoImageText, '800_1000');
-                endif;
-
-                $imageTwoIDStrateTwoImageText = get_sub_field('strate_text_two_image_image_2');
-                $imageTwoURLStrateTwoImageText = '';
-                if($imageTwoIDStrateTwoImageText):
-                    $imageTwoURLStrateTwoImageText = lsd_get_thumb($imageTwoIDStrateTwoImageText, '1000_600');
-                endif;
-                ?>
-
-                <div class="row strate strate-images-textes imgs-right">
-                    <div class="col-sm-7">
-                        <div class="text-content">
-                            <?php if($bigTitleStrateTwoImageText): ?>
-                                <div class="title-hand">
-                                    <?php echo $bigTitleStrateTwoImageText; ?>
-                                </div>
-                            <?php endif; ?>
-                            <?php if($titleStrateTwoImageText): ?>
-                                <div class="title"><?php echo $titleStrateTwoImageText; ?></div>
-                            <?php endif; ?>
-                            <?php echo ($textStrateTwoImageText) ? $textStrateTwoImageText : ''; ?>
-                        </div>
-                        <?php if(isset($imageTwoURLStrateTwoImageText)): ?>
-                            <img src="<?php echo $imageTwoURLStrateTwoImageText; ?>" class="image-2" alt="">
-                        <?php endif; ?>
-                    </div>
-                    <div class="col-sm-5">
-                        <?php if(isset($imageOneURLStrateTwoImageText)): ?>
-                            <img src="<?php echo $imageOneURLStrateTwoImageText; ?>" class="image-1" alt="">
-                        <?php endif; ?>
-                    </div>
-                </div>
-            <?php elseif (get_row_layout() == 'strate_text_one_image'):
+            <?php if (get_row_layout() == 'strate_text_one_image'):
                 $titleStrateTextOneImageBigTitle = get_sub_field('strate_text_one_image_big_title');
                 $titleStrateTextOneImageTitle = get_sub_field('strate_text_one_image_title');
                 $textStrateTextOneImageTitle = get_sub_field('strate_text_one_image_text');
                 $imageStrateTextOneImageTitle = get_sub_field('strate_text_one_image_image_1');
                 if($imageStrateTextOneImageTitle):
-                    $imageURLStrateTextOneImageTitle = lsd_get_thumb($imageStrateTextOneImageTitle, '800_500');
+                    $imageURLStrateTextOneImageTitle = lsd_get_thumb($imageStrateTextOneImageTitle, 'imageStratePartners');
                 endif;
                 $positionStrateTextOneImageTitle = get_sub_field('strate_text_one_image_position');
 
@@ -120,42 +86,34 @@ $textDescription = get_field('post_article_description');
                         </div>
                     <?php endif; ?>
                 </div>
-            <?php elseif (get_row_layout() == 'strate_text_center'):
-                $titleStrateTextCenter = get_sub_field('strate_text_center_title');
-                $textStrateTextCenter = get_sub_field('strate_text_center_text');
+
+            <?php elseif (get_row_layout() == 'strate_question'):
+                $strate_question_sup_title_question = get_sub_field('strate_question_sup_title_question');
+                $strate_question_question = get_sub_field('strate_question_question');
+                $strate_question_response = get_sub_field('strate_question_response');
+                $strate_question_order_right = get_sub_field('strate_question_order_right');
                 ?>
-                <div class="row strate-textes-center text-center strate">
-                    <div class="col-sm-9 mx-auto">
-                        <div class="text-content">
-                            <?php if($titleStrateTextCenter): ?>
-                                <div class="title"><?php echo $titleStrateTextCenter; ?></div>
-                            <?php endif; ?>
-                            <?php echo ($textStrateTextCenter)? $textStrateTextCenter : ''; ?>
+                <div class="row strate">
+                    <div class="col-sm-12 <?= ($strate_question_order_right)? 'text-right': ''; ?>">
+                        <div class="title-hand">
+                            <?php echo $strate_question_sup_title_question; ?>
+                        </div>
+                        <div class="title">
+                            <?= $strate_question_question; ?>
                         </div>
                     </div>
-                </div>
 
-            <?php elseif (get_row_layout() == 'image_center'):
-                $imageCenterImage = get_sub_field('image_center_image');
-                if($imageCenterImage):
-                    $imageURLCenterImage = lsd_get_thumb($imageCenterImage, 'presentationPaysageSize');
-                endif;
-                ?>
-                <?php if(isset($imageURLCenterImage)): ?>
-                <div class="strate row image-center">
                     <div class="col-sm-12">
-                        <img src="<?php echo $imageURLCenterImage; ?>" alt="">
-                    </div>
-                </div>
-            <?php endif; ?>
+                        <?php if($professeurInterview): ?>
+                        <div class="response">
+                            <strong>
+                                <?= get_the_title($professeurInterview); ?> :
+                            </strong>
+                        </div>
+                        <?php endif; ?>
 
-            <?php elseif (get_row_layout() == 'strate_contenu_riche'):
-                $richeContent = get_sub_field('strate_contenu_riche_content');
-                ?>
-                <div class="row strate-textes-center strate">
-                    <div class="col-sm-10 mx-auto">
-                        <div class="text-content">
-                            <?php echo $richeContent; ?>
+                        <div class="response-content">
+                            <?= $strate_question_response; ?>
                         </div>
                     </div>
                 </div>

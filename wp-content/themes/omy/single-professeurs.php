@@ -10,10 +10,7 @@ if($_POST){
 
 $teacherKeyWords = get_field('posttype_prof_key_words', $postID);
 
-$urlGoogleAgenda = get_field('posttype_prof_calendar_url');
-if($urlGoogleAgenda) {
-    $agendaTeacher = getCalendarFromGoogle($urlGoogleAgenda);
-}
+$posttype_prof_calendar_datas = get_field('posttype_prof_calendar_datas');
 $emailTeacher = get_field('posttype_prof_calendar_email');
 $teachRecommandation = get_field('posttype_prof_recommandation',$postID);
 
@@ -211,7 +208,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
 </div>
 <?php endif; ?>
 
-<?php if($urlGoogleAgenda): ?>
+<?php if($posttype_prof_calendar_datas): ?>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 text-left marge-top">
@@ -249,83 +246,37 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                 </thead>
                 <tbody>
                 <?php
-                $array = $agendaTeacher;
-
-                if($array):
-                    function date_compare($element1, $element2) {
-                        $datetime1 = strtotime($element1['startCompare']);
-                        $datetime2 = strtotime($element2['startCompare']);
-                        return $datetime1 - $datetime2;
-                    }
-
-                    usort($array, 'date_compare');
-
-                    foreach ($array as $agendaTeacherItem):
-                        $dateEvent = new DateTime($agendaTeacherItem['startCompare']);
-                        $dateNow = new DateTime();
-                        $levelClasse = '';
-                        $linkRedirect = '';
-                        $lieuEvent = '';
-
-                        if($dateEvent > $dateNow):
-                            $eventDescription = $agendaTeacherItem['eventDescription'];
-                            $posts = get_posts(array(
-                                'numberposts'   => 1,
-                                'post_type'     => 'combinaison',
-                                'meta_key'      => 'post_combinaison_id',
-                                'meta_value'    => $eventDescription
-                            ));
-
-                            if($posts):
-                                $postSingle = reset($posts);
-                                $postID = $postSingle->ID;
-                                // ACF Fields
-                                $levelClasse = get_field('post_combinaison_level', $postID);
-                                $linkRedirect = get_field('post_combinaison_redirection', $postID);
-                                $lieuEvent = get_field('post_combinaison_lieu', $postID);
-                                $typeYoga = get_field('post_combinaison_type_yoga', $postID);
-                            endif;
 
 
+                if($posttype_prof_calendar_datas):
+
+
+
+                    foreach ($posttype_prof_calendar_datas as $agendaTeacherItem):
 
                             ?>
-                            <tr class="<?= ($posts) ? 'collectif hidde' : 'particulier hidde'; ?>">
+                            <tr class="collectif hidde">
                                 <td>
-                                    <?php echo $agendaTeacherItem['startDateDay']; ?>
+                                    <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_day']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $agendaTeacherItem['startDate']; ?>
+                                    <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_hour_start']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $agendaTeacherItem['endDate']; ?>
+                                    <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_hour_end']; ?>
                                 </td>
                                 <td>
-                                    <?php if($levelClasse): ?>
-                                        <?php echo $levelClasse; ?>
-                                    <?php else: ?>
-                                        Non défini
-                                    <?php endif; ?>
+                                    <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_level']; ?>
                                 </td>
                                 <td>
-                                    <?= ($typeYoga)? $typeYoga : 'Non défini'; ?>
+                                    <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_yoga_type']; ?>
                                 </td>
                                 <td class="text-right">
-                                    <?php if($lieuEvent): ?>
-                                        <?php echo $lieuEvent; ?>
-                                    <?php else: ?>
-                                        Non défini
-                                    <?php endif; ?>
+                                    <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_location']; ?>
                                 </td>
-                                <!--<td width="20%" class="text-right">
-                                    <?php /*if($linkRedirect): */?>
-                                        <a class="button primary" target="_blank" href="<?php /*echo $linkRedirect; */?>">S'inscrire</a>
-                                    <?php /*elseif($emailTeacher): */?>
-                                        <a class="button primary" href="mailto:<?php /*echo $emailTeacher; */?>">S'inscrire</a>
-                                    <?php /*endif; */?>
-                                </td>-->
                             </tr>
-                        <?php endif;
-                    endforeach;
+
+                    <?php endforeach;
                 endif;?>
                 </tbody>
             </table>
@@ -487,7 +438,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                 <div class="col-sm-12 text-center">
                     <div class="title">Connectez-vous pour laisser un avis sur ce professeur</div>
 
-                    <a href="" class="button primary">Connectez-vous</a>
+                    <a href="<?php echo get_the_permalink(PAGE_COMPTE); ?>" class="button primary">Connectez-vous</a>
                 </div>
             </div>
         <?php endif; ?>

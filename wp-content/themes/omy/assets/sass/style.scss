@@ -251,6 +251,10 @@ p{
 // Components
 .teacher{
 	display: block;
+
+	&:focus{
+		outline: none;
+	}
 	img{
 		display: block;
 		max-width: 100%;
@@ -1330,5 +1334,28 @@ p{
 
 	.container-strates{
 		padding-bottom: 0px;
+	}
+
+
+	.response-content{
+		display: inline;
+		position: relative;
+		padding-left: 30px;
+		padding-top: 10px;
+		&:before{
+			content: '’’';
+			font-family: sans-serif;
+			font-size: 60px;
+			line-height: 20px;
+			display: inline;
+			transform: rotate(180deg);
+			position: absolute;
+			left: 0;
+			top: -10px;
+		}
+
+		p{
+			display: inline;
+		}
 	}
 }

@@ -31,23 +31,33 @@ $filterLevel = get_terms('level',array(
 ));
 
 if($_GET){
-    $resultsProfs = get_teach_after_filter();
+
 }
 
+$resultsProfs = get_teach_after_filter();
+
+$imageIntro = get_field('page_hero_image_background');
+
+if($imageIntro):
+    $imageIntroURL = lsd_get_thumb($imageIntro, '1920_1080');
+endif;
+$titlePage = get_field('page_hero_title');
+$introductionPage = get_field('page_hero_introduction');
 ?>
 
 <div class="hero not-homepage">
-    <img src="https://images.pexels.com/photos/3735527/pexels-photo-3735527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="background-strate">
-
+    <?php if(isset($imageIntroURL)): ?>
+        <img src="<?= $imageIntroURL; ?>" alt="" class="background-strate">
+    <?php endif; ?>
     <div class="inner-hero white">
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 mx-auto text-center">
                     <h2 class="title big">
-                        <?php echo get_the_title(); ?>
+                        <?= $titlePage; ?>
                     </h2>
                     <div class="description">
-                        <p>Oh My Yogness! vous fait découvrir des profs de yoga à Paris pour vous permettre de trouver celui qui convient le mieux à votre sensibilité, vos objectifs et vos envies du moment.</p>
+                        <p><?= $introductionPage; ?></p>
                     </div>
                 </div>
             </div>

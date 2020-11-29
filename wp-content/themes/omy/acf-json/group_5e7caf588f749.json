@@ -3,6 +3,28 @@
     "title": "Champs (article)",
     "fields": [
         {
+            "key": "field_5fc2e2c8a6125",
+            "label": "Interview de :",
+            "name": "post_article_prof",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "professeurs"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_5e7cb0827a4e9",
             "label": "Contenu de l'article",
             "name": "",
@@ -32,121 +54,6 @@
                 "id": ""
             },
             "layouts": {
-                "layout_5e7cb0bdd2ff8": {
-                    "key": "layout_5e7cb0bdd2ff8",
-                    "name": "strate_text_two_image",
-                    "label": "Texte & deux images",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5fa7189017ee9",
-                            "label": "Grand titre",
-                            "name": "strate_text_two_image_big_title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5e7cb0ec7a4eb",
-                            "label": "Titre",
-                            "name": "strate_text_two_image_title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5e7cb0f57a4ec",
-                            "label": "Texte",
-                            "name": "strate_text_two_image_text",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
-                        },
-                        {
-                            "key": "field_5e7cb1067a4ed",
-                            "label": "Image n°1",
-                            "name": "strate_text_two_image_image_1",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "",
-                            "preview_size": "medium",
-                            "library": "",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_5e7cb11b7a4ee",
-                            "label": "Image n°2",
-                            "name": "strate_text_two_image_image_2",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "",
-                            "preview_size": "medium",
-                            "library": "",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_5e7cb1cb7a4f3": {
                     "key": "layout_5e7cb1cb7a4f3",
                     "name": "strate_text_one_image",
@@ -265,16 +172,54 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_5e7cb1667a4f0": {
-                    "key": "layout_5e7cb1667a4f0",
-                    "name": "strate_text_center",
-                    "label": "Texte centré ",
+                "layout_5fc2e21f302e8": {
+                    "key": "layout_5fc2e21f302e8",
+                    "name": "strate_question",
+                    "label": "Question",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5e7cb1b97a4f2",
-                            "label": "Texte",
-                            "name": "strate_text_center_text",
+                            "key": "field_5fc2e22c302e9",
+                            "label": "Sur-titre de la question",
+                            "name": "strate_question_sup_title_question",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5fc2e248302ea",
+                            "label": "Question",
+                            "name": "strate_question_question",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5fc2e269302eb",
+                            "label": "Réponse",
+                            "name": "strate_question_response",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -291,10 +236,10 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5e7cb19b7a4f1",
-                            "label": "Titre",
-                            "name": "strate_text_center_title",
-                            "type": "text",
+                            "key": "field_5fc2e28f302ec",
+                            "label": "Question à droite",
+                            "name": "strate_question_order_right",
+                            "type": "true_false",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -303,74 +248,11 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5e7cb29be1a2b": {
-                    "key": "layout_5e7cb29be1a2b",
-                    "name": "image_center",
-                    "label": "Image centrée ",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5e7cb2b8e1a2c",
-                            "label": "Image",
-                            "name": "image_center_image",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "id",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5e922acff00f9": {
-                    "key": "layout_5e922acff00f9",
-                    "name": "strate_contenu_riche",
-                    "label": "Contenu riche",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5e922ae8f00fa",
-                            "label": "Contenu",
-                            "name": "strate_contenu_riche_content",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
+                            "message": "Cocher si la question doit être à droite",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -389,20 +271,6 @@
                 "operator": "==",
                 "value": "post"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "default"
-            }
         ]
     ],
     "menu_order": 0,
@@ -413,5 +281,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1604786577
+    "modified": 1606607632
 }
