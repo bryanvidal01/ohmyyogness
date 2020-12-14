@@ -1009,10 +1009,37 @@ p{
 	margin-right: auto;
 }
 
+.page-template-page-connexion{
+	.woocommerce{
+		width: 100%;
+	}
+}
+
+.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register{
+	min-height: 380px;
+}
+
 .woocommerce form.register{
 	background: #F7F7F7;
 	border: 0 !important;
 	padding-bottom: 40px !important;
+
+	.password-input{
+		width: 100%;
+		display: block;
+	}
+
+	.woocommerce-privacy-policy-text{
+		display: none;
+	}
+
+	.consent-message{
+		font-size: 14px;
+		padding: 15px 0;
+		&.require{
+			color: #b81c23;
+		}
+	}
 }
 
 .woocommerce-lost-password{
@@ -1357,5 +1384,133 @@ p{
 		p{
 			display: inline;
 		}
+	}
+}
+
+
+
+.visible-mobile{
+	display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+	.button-navigation{
+		position: absolute;
+		top: 37px;
+		right: 15px;
+		z-index: 400;
+
+		.bar{
+			width: 25px;
+			height: 2px;
+			background: #000;
+			margin-bottom: 3px;
+		}
+	}
+
+	.nav-open{
+		.header {
+			.navigation-container {
+				display: block;
+			}
+		}
+	}
+
+	.header .logo{
+		display: inline-block;
+		z-index: 500;
+		h1{
+			font-size: 1.8rem;
+		}
+	}
+	.header{
+		.navigation-container{
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: #FFF;
+			z-index: 30;
+			border-top: 3px solid $color-clear;
+			display: none;
+
+			.navigation{
+				width: 100%;
+				border-top: 1px solid #F7F7F7;
+				margin-top: 80px;
+				padding-top: 0;
+			}
+			ul{
+				display: block;
+				text-align: center;
+				margin: 0;
+
+				li{
+					display: block;
+				}
+			}
+			a{
+				display: block;
+				width: 100%;
+				margin-left: 0;
+				padding: 15px 0;
+				border-bottom: 1px solid #F7F7F7;
+				text-align: center;
+			}
+		}
+	}
+
+
+	.title-hand{
+		font-size: 50px;
+		line-height: 1em;
+	}
+
+	.slider .slick-dots{
+		top: 0px;
+		right: 13px;
+	}
+
+	.footer{
+		text-align: center;
+		padding: 30px 0;
+
+		.logo{
+			margin-bottom: 30px;
+		}
+		.text-right{
+			text-align: center !important;
+		}
+	}
+
+	.strate-recommandations{
+		.text-right{
+			text-align: center !important;
+		}
+
+		.button{
+			margin-top: 30px;
+		}
+	}
+
+	.hidden-mobile{
+		display: none;
+	}
+
+	.visible-mobile{
+		display: block;
+	}
+
+	.calendar-dates tr th{
+		font-size: 16px;
+	}
+
+	.card-step{
+		margin-top: 15px;
+		display: block;
+		padding-bottom: 60px;
+		height: auto;
 	}
 }

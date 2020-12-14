@@ -11,17 +11,6 @@ function wp_custom_post_type() {
         )
     );
 
-    register_post_type('combinaison',
-        array(
-            'labels'      => array(
-                'name'          => __('Combinaison', 'lsd_lang'),
-                'singular_name' => __('Combinaison', 'lsd_lang'),
-            ),
-            'public'      => true,
-            'has_archive' => false,
-        )
-    );
-
     register_post_type('recommendations',
         array(
             'labels'      => array(

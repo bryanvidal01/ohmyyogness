@@ -11,6 +11,7 @@ define('PAGE_PROFESSEURS', get_field('params_page_professeur', 'option'));
 define('PAGE_COMPTE', get_field('params_page_compte', 'option'));
 define('PAGE_BLOG', get_field('params_page_blog', 'option'));
 define('PAGE_ABOUT', get_field('params_page_presentation', 'option'));
+define('PAGE_LEGALS', get_field('params_page_legals', 'option'));
 
 
 
@@ -120,4 +121,7 @@ function remove_menu_items() {
     }
 }
 add_action('admin_menu', 'remove_menu_items');
+
+
+
 

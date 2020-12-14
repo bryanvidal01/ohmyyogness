@@ -205,7 +205,7 @@ $page_concept_steps_button_label = get_field('page_concept_steps_button_label');
 
     <div class="row">
         <div class="col-sm-12 text-center">
-            <a href="" class="button primary marge-top-sup">Rechercher un professeur</a>
+            <a href="<?= get_the_permalink(PAGE_PROFESSEURS); ?>" class="button primary marge-top-sup">Rechercher un professeur</a>
         </div>
     </div>
 </div>

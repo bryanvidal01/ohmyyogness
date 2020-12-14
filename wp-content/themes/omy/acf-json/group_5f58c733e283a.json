@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5fd3560b2fcab",
+            "label": "Nom complet du professeur",
+            "name": "posttype_prof_full_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5f58c73ca882b",
             "label": "Image du professeur",
             "name": "posttype_prof_image",
@@ -522,5 +541,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1606222268
+    "modified": 1607685748
 }

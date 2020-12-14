@@ -2,15 +2,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173944003-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-173944003-1');
-    </script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +16,11 @@
 
 <body <?php body_class(); ?>>
 
-
+<div class="button-navigation">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
 <header class="header">
     <div class="container">
         <div class="row">
@@ -37,13 +32,15 @@
                 </a>
             </div>
             <div class="col-sm-9 text-right">
-                <div class="navigation">
-                    <?php echo wp_nav_menu(); ?>
+                <div class="navigation-container">
+                    <div class="navigation">
+                        <?php echo wp_nav_menu(); ?>
+                    </div>
+                    <a href="<?php echo get_the_permalink(PAGE_COMPTE); ?>" class="account-link">
+                        <?php lsd_get_template_part('icons', 'icon', 'user'); ?>
+                        Mon compte
+                    </a>
                 </div>
-                <a href="<?php echo get_the_permalink(PAGE_COMPTE); ?>" class="account-link">
-                    <?php lsd_get_template_part('icons', 'icon', 'user'); ?>
-                    Mon compte
-                </a>
             </div>
         </div>
     </div>

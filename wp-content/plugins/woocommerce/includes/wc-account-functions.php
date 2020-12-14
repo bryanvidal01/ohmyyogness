@@ -4,7 +4,7 @@
  *
  * Functions for account specific things.
  *
- * @package WooCommerce/Functions
+ * @package WooCommerce\Functions
  * @version 2.6.0
  */
 
@@ -87,21 +87,21 @@ function wc_edit_address_i18n( $id, $flip = false ) {
  */
 function wc_get_account_menu_items() {
 	$endpoints = array(
-		//'orders'          => get_option( 'woocommerce_myaccount_orders_endpoint', 'orders' ),
-		//'downloads'       => get_option( 'woocommerce_myaccount_downloads_endpoint', 'downloads' ),
-		//'edit-address'    => get_option( 'woocommerce_myaccount_edit_address_endpoint', 'edit-address' ),
-		//'payment-methods' => get_option( 'woocommerce_myaccount_payment_methods_endpoint', 'payment-methods' ),
+		'orders'          => get_option( 'woocommerce_myaccount_orders_endpoint', 'orders' ),
+		'downloads'       => get_option( 'woocommerce_myaccount_downloads_endpoint', 'downloads' ),
+		'edit-address'    => get_option( 'woocommerce_myaccount_edit_address_endpoint', 'edit-address' ),
+		'payment-methods' => get_option( 'woocommerce_myaccount_payment_methods_endpoint', 'payment-methods' ),
 		'edit-account'    => get_option( 'woocommerce_myaccount_edit_account_endpoint', 'edit-account' ),
 		'customer-logout' => get_option( 'woocommerce_logout_endpoint', 'customer-logout' ),
 	);
 
 	$items = array(
 		'dashboard'       => __( 'Dashboard', 'woocommerce' ),
-		//'orders'          => __( 'Orders', 'woocommerce' ),
-		//'downloads'       => __( 'Downloads', 'woocommerce' ),
-		//'edit-address'    => __( 'Addresses', 'woocommerce' ),
-		//'payment-methods' => __( 'Payment methods', 'woocommerce' ),
-		'edit-account'    => __( 'Informations personnelles', 'woocommerce' ),
+		'orders'          => __( 'Orders', 'woocommerce' ),
+		'downloads'       => __( 'Downloads', 'woocommerce' ),
+		'edit-address'    => _n( 'Addresses', 'Address', (int) wc_shipping_enabled(), 'woocommerce' ),
+		'payment-methods' => __( 'Payment methods', 'woocommerce' ),
+		'edit-account'    => __( 'Account details', 'woocommerce' ),
 		'customer-logout' => __( 'Logout', 'woocommerce' ),
 	);
 

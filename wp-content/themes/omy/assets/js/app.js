@@ -119,12 +119,43 @@ $(document).ready(function(){
         //
     })
 
+    $('.button-navigation').click(function(){
+        $('body').toggleClass('nav-open');
+    });
+
+
+    $('form.register').submit(function(event){
+        var el = jQuery(this);
+
+        var consent = el.find('#validation-consent');
+
+        if(!consent.is(":checked")){
+            event.preventDefault();
+            $('.consent-message').addClass('require');
+        }
+    });
+
 });
+
+
+function isMobile(){
+    if($(window).width() < 769){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+if(isMobile()){
+    var itemsSlider = 1;
+}else{
+    var itemsSlider = 3;
+}
 
 window.onload = function() {
     $('.slider').slick({
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: itemsSlider,
+        slidesToScroll: itemsSlider,
         dots: true,
         infinite: true,
         speed: 500,

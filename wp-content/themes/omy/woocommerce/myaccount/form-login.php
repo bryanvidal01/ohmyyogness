@@ -102,12 +102,16 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
             <?php do_action( 'woocommerce_register_form' ); ?>
 
+            <input type="checkbox" id="validation-consent" class="validatation-consent">
+            <label for="validation-consent" class="consent-message">J'accepte que mes données soit conservés.</label>
+
             <p class="woocommerce-form-row form-row">
                 <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
                 <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
             </p>
 
             <?php do_action( 'woocommerce_register_form_end' ); ?>
+
 
         </form>
 

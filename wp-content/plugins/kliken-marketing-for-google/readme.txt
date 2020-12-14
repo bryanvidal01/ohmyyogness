@@ -1,124 +1,146 @@
-=== Google Ads for WooCommerce ===
+=== Google Ads & Marketing by Kliken ===
 Contributors: sitewit
 Tags: advertising, adwords, analytics, bing, google, leads, marketing, marketing platform, metrics, online advertising, online marketing, plugin, ppc, PPC, google shopping, shopping ads, product ads, ROI, conversions
 Requires at least: 4.4
-Tested up to: 5.3
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.4
+Stable tag: 1.0.6
 License: GPLv3 or later License
 URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Google Shopping Ads are the most effective way to advertise your Woo store and increase sales and revenue.
+Google Ads & Marketing by Kliken is the easiest way to promote your products to interested shoppers across Google so you can get discovered on any budget.
 
 
 == Description ==
 
-Increase your sales and revenue by generating a fully optimized Google Smart Shopping Ads campaign in just a few simple steps. Select what categories you want to advertise and we’ll generate Intelligent Google Smart Shopping feeds that automatically manage ad creation, targeting, bidding, budget allocation, sales and conversions across all Google networks. You can launch your Google Ads campaigns in 3 simple steps. It only takes 8 minutes.
+### Get your products in front of the millions of shoppers searching on Google ###
 
-#### Place your products in front of millions of online shoppers searching for the products you offer
-
-**Google Ads for WooCommerce** makes it easy for store owners to harness the power of advertising on Google. Let our experts manage your free listings and paid campaigns to save you time and maximize your budget.
-
-#### List your products for free on the Google Shopping tab
-
-This new feature will allow eligible merchants to access free listings that will appear alongside paid ads in the U.S.
-
-For **Google Ads for WooCommerce** customers, this means retailers will be able to augment paid ads with free listings that could show up on the Google Shopping tab to potentially drive free traffic to your product pages. Learn more about free listings [here](https://www.blog.google/products/shopping/its-now-free-to-sell-on-google/). You can also access the help center [here](https://support.google.com/merchants/answer/9838672).
-
-#### Expand your reach with Smart Shopping campaigns
-
-Smart Shopping campaigns display your products across Google’s advanced retargeting network. This allows interested shoppers to discover the items you offer on Google Shopping, Search, YouTube, Gmail and throughout the display network.
-
-Creating your campaign with Google Ads for WooCommerce is easy and only takes eight minutes and three simple steps!
-
-Select what categories you want to advertise and let our experts generate Intelligent Google Smart Shopping feeds that automatically manage ad creation, targeting, bidding, budget allocation, sales and conversions across all Google networks.
+Google Ads & Marketing by Kliken is the easiest way to promote your products to interested shoppers across Google so you can get discovered on any budget.
 
 
-### What are the benefits?
+### About Google Ads & Marketing
 
-* **Get more exposure:** Google Smart Shopping takes your products beyond Google search to sell across Shopping, YouTube, Gmail, and the Google Display Network.
-* **Optimize your budget:** Your ad will be displayed exactly when and where users search what you offer, and you only pay when they visit your website.
-* **Maximize conversions:** Smart Shopping campaigns combine Google Shopping with Display Remarketing to create a single conversion-focused campaign for your store.
-* **Up-to-date inventory:** Keep your marketing and store in sync, ensuring you only market products that are in inventory, keeping the Google campaigns and Woo store in sync automatically.
-* **Grow your sales:** Per Google, Smart Shopping campaigns unlock 20% more conversion value than standard Shopping. Kliken’s customers see 7X return on ad spend.
+Kliken’s Google Ads & Marketing manages and automates everything you need to get your products on Google for $10/month. It helps eligible merchants:
 
-
-### How does it work?
-
-#### Build your Smart Shopping campaigns in three simple steps.
-
-It takes only eight minutes, we will do the rest for you!
-
-1. Sign up
-2. Create your campaign
-    * Select where you want to advertise your products
-    * Pick your category
-    * Select which products you want to advertise
-3. Define your budget and check out
-
-It's that easy!
-
-#### Track your campaign results and sales performance easily.
-
-Google Ads for WooCommerce enables store owners to easily view the information that’s most important to them straight from their fully integrated dashboard.
-
-#### A special offer from Google to WooCommerce customers
-
-As a Google Partner, WooCommerce can now offer its customers a credit for advertising on Google. **Spend $150 within 31 days and we'll automatically top up your account with an additional $150 worth of advertising credit*.**
+* Create or link a **Google Merchant Center Account**
+* **Optimize Smart Product feeds** with daily inventory sync
+* **Access free listings** on surfaces across Google and the Google Shopping Tab
+* **Run paid Smart Shopping campaigns** to promote products across Google, Gmail, YouTube and the Display Network
 
 
-### Pricing
 
-Campaigns start as low as $150 a month with promotional offers available for new customers *(see Terms & Conditions)*. This includes your ad spend and campaign Automation and Optimization fees plus the option to enable free listings on the Google Shopping tab.
+### How it works
 
-The campaign Automation and Optimization fee covers creation and management of many aspects of the campaign. This includes:
+#### Create or link your Google Merchant Center Account
 
-* Creation and management of the Google Merchant Center account
-* Creation and management of the Google Ads account
-* Dynamic product feed that is linked directly to your WooCommerce store
-* Syncing changes such as product price, product titles, and other important store data for your campaign each day.
+We help you create or link your Woo store to the necessary accounts needed to get your products on Google. We also continue to optimize and manage these accounts so you don’t have to.
+
+
+#### Sync and optimize your store product feed
+
+Keeping your inventory up-to-date is easy with our automated product feed and daily syncs so you can make sure shoppers are only seeing your in-stock products when they find you on Google.
+
+
+#### Access free listings on the Google Shopping tab and surfaces across Google
+
+When eligible merchants sign up for Google Ads & Marketing by Kliken, they are automatically opted into free listings so that they can potentially show up on [surfaces across Google](https://support.google.com/merchants/answer/9199328) or the [Google Shopping tab](https://support.google.com/merchants/answer/9838672?hl=en) to drive free traffic to their approved products.
+
+Learn more about free listings [here](https://www.blog.google/products/shopping/its-now-free-to-sell-on-google/) and access the help center [here](https://support.google.com/merchants/answer/9838672).
+
+
+#### Run paid Smart Shopping Campaigns to show up across Google Shopping, Search, YouTube, Gmail, and the Google Display Network
+
+Smart Shopping campaigns help increase your sales and revenue by displaying your products to interested shoppers strategically across Google to drive traffic and sales.
+
+Select which categories you want to advertise and the extension will generate Google Smart Shopping feeds that automatically manage ad creation, targeting, bidding, budget allocation, sales and conversions.
+
+
+#### Start today and take advantage of this special offer from Google
+
+As a Google Partner, WooCommerce can offer new advertisers ad credits. Spend $150 within 31 days and automatically get an additional $150 worth of advertising credit* (See terms and conditions).
+
+
+#### What are the benefits of running Smart Shopping campaigns?
+
+* **Grow your sales:** Our customers see a 7X return on ad spend
+* **Expand your reach:** Your products will show up in front of shoppers across the Google Display Network, Shopping, Search, YouTube, Gmail, plus you only pay when users click on your ad
+* **Track performance:** Track your sales performance and campaign results in your Woo store
+
+
+### Google Ads & Marketing Pricing
+
+#### The Kliken automation fee is $10 per month
+
+The automation fee covers everything you need to be successful on Google Ads & Marketing
+
+
+#### You can also choose your ads budget for Smart Shopping Campaigns
+
+We have seen the most success with merchants who start with the $300 budget so your feed can go through proper machine learning optimization and get better qualified leads.
 
 
 ### Questions?
 
-We are here to help you. Please email us at support@kliken.com or call us Toll Free 877-474-8394 or +1-813-279-8888.
+The Kliken team is here to help you. Please send an email to [support@kliken.com](mailto:support@kliken.com) or call Toll Free: 877-474-8394 or +1-813-279-8888.
 
 
 ### Requirements
 
-There are a few basic requirements to get approved for Google Shopping. Making sure your store includes these basic requirements can help with getting your products on Google faster. Some of these are policies to include in the footer or menu of your site. Others are important information to help ensure customers have a great shopping experience on your WooCommerce store!
+There are a few basic requirements to get approved for Google Ads & Marketing. Making sure your store meets these basic requirements can help with getting your products on Google faster. These policies are meant to ensure customers have a great shopping experience in your WooCommerce store!
 
-* Return/Refund policy (Whether your store provides returns/refunds is OK! Just make sure to clearly state this)
-* Contact information including 2 out of the 3 – Email, phone number, or physical address
+* Return and refund policy: include a return and refund policy page that is clear and easy to find (e.g. link to policy in website footer or header). More info [here](https://support.google.com/merchants/answer/6363310?hl=en&ref_topic=9216868). (Whether your store provides returns/refunds is OK! Just make sure to clearly state this)
+* Contact information: include accurate contact information, including 2 of the 3: email, phone number, or physical address. More info [here](https://support.google.com/merchants/answer/6363310?hl=en&ref_topic=9216868).
 * Listing available payment methods before checkout with text or icons
 
-You can learn more about all the Google Shopping policies and how to help your store get approved [here](https://support.google.com/merchants/answer/6149970?hl=en).
+You can learn more about all the Google Ads & Marketing policies and how to help your store get approved [here](https://support.google.com/merchants/topic/7286989?hl=en&ref_topic=7259123).
 
 
 ### Terms & Conditions
 
-*Valid only for new Kliken customers. Promotional codes have no promotional value and entry of the promotional code serves only to begin your qualification for the associated promotional credit. To earn the promotional credit, start advertising! The advertising costs you accrue in this account in the 31 days following the start of your campaign will be matched with advertising credit in the same amount, up to a maximum value of $150. Your account must be successfully billed by Kliken and remain in good standing in order to qualify for the promotional credit. The promotional credit will be applied within approximately 5 days after the 31st day of starting your campaign, as long as you’ve activated your account using the promotional code and fulfilled all requirements stated in the offer. For the complete terms and conditions, [click here](https://www.google.com/ads/coupons/terms.html).
+*Valid only for new Kliken customers. Promotional codes have no promotional value and entry of the promotional code serves only to begin your qualification for the associated promotional credit. To earn the promotional credit, start advertising! The advertising costs you accrue in t
+his account in the 31 days following the start of your campaign will be matched with advertising credit in the same amount, up to a maximum value of $150. Your account must be successfully billed by Kliken and remain in good standing in order to qualify for the promotional credit. The promotional credit will be applied within approximately 5 days after the 31st day of starting your campaign, as long as you’ve activated your account using the promotional code and fulfilled all requirements stated in the offer. For the complete terms and conditions, [click here](https://www.google.com/ads/coupons/terms.html).
+
+Please be aware that Automattic and our partners SiteWit/Kliken and Google have access to business metrics for each user so that Kliken can optimize each account. This data includes views, clicks, conversions, cost per click, cost, and revenue.
 
 
 == Frequently Asked Questions ==
 
-= How much does a campaign cost? =
-Campaigns start as low as $150 a month with promotional offers available for new customers *(see Terms & Conditions)*. This includes your ad spend and campaign Automation and Optimization fees. It is ideal to start with $300 per month for best results. Free listings on the Google Shopping tab are no cost to you and can supplement paid ads (coming soon).
+= What if my store is not approved and I have already paid? =
+We offer a 100% Money Back Guarantee
+If we can’t get your store approved on Google Ads & Marketing in 30 days we will refund 100% of your money.
 
-= What countries are available for Google Shopping? =
-Learn more about which countries offer Google Shopping at this time [here](https://support.google.com/merchants/answer/160637?hl=en)
+= What countries are available for Google Ads & Marketing? =
+Learn more about which countries offer Google Ads & Marketing at this time [here](https://support.google.com/merchants/answer/160637#countrytable).
 
 = How does billing work? =
-Your Google Shopping campaign is billed monthly to help keep your product ads online. You will be billed the same amount each time for the package level you choose. This way you know the exact costs of your campaign each month.
+Your Kliken automation fee and any Smart Shopping campaigns you run are billed monthly to help keep your product ads online. You will be billed the same amount each time for the package level you choose. This way you know the exact costs of your campaign each month.
+
+If you are running a Smart Shopping campaign your ads will start serving as soon as your store is approved on Google Ads & Marketing. Once your store is approved on Google Ads & Marketing your monthly budget will be served on a daily basis for the next 30 days, making sure your marketing is evenly distributed through the 30 day period and also that you never go over budget.
+
+Your subscription auto renews 30 days after your ads start generating clicks unless you cancel it.
+
+If for some reason your store does not get approved we will refund you 100% of your money.
 
 = How do I cancel my subscription? =
-The Google Shopping campaign is a contract free service. You can cancel your subscription at any time from the Google Shopping app under the Manage section. When a campaign is cancelled, it will continue to run the remainder of the billed month, or until it has used the remaining Google Ads balance.
+Google Ads & Marketing for WooCommerce is a contract free service. You can cancel your subscription at any time under the Manage section. When a campaign is cancelled, it will continue to run the remainder of the billed month, or until it has used the remaining Google Ads & Marketing balance.
 
-= What is the Campaign Automation and Optimization Fee for? =
-This campaign management fee covers creation and management of many aspects of the campaign. This includes creation and management of the Google Merchant Center account and Google ads account. This also includes a dynamic product feed that is linked directly with your WooCommerce store, syncing changes such as product price, product titles, and other important store data for your campaign each day.
+
+== Screenshots ==
+
+1. Trusted by WooCommerce Merchants
+2. Stay in front of shoppers across Google search, Youtube, Gmail, and more
+3. Sign up now to start advertising on Google
+4. Get a simple overview of Revenue, Sales, and Campaign Performance
+5. Pricing for any size business
 
 
 == Changelog ==
+
+= 1.0.6 =
+* Minor bug fixes.
+
+= 1.0.5 =
+* Minor bug fixes.
 
 = 1.0.4 =
 * Minor bug fixes.

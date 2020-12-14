@@ -7,9 +7,25 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-3">
                     <div class="logo">
                         Oh My Yogness!
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="container-menu-footer">
+                        <ul>
+                            <li>
+                                <a href="<?= get_the_permalink(PAGE_LEGALS); ?>">
+                                    Mentions légales
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:<?= get_field('params_mail_address', 'option') ?>">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -57,8 +73,9 @@
         </div>
     </footer>
     <div class="end-footer">
-        ©Copyright Oh my yogness! | Tous droits résérvés  | <a href="#">Mentions légales</a>
+        ©Copyright Oh my yogness! | Tous droits résérvés  | <a href="<?= get_the_permalink(PAGE_LEGALS); ?>">Mentions légales</a>
     </div>
+
 
 
 

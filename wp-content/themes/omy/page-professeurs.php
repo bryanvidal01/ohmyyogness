@@ -30,9 +30,6 @@ $filterLevel = get_terms('level',array(
     'hide_empty' => false,
 ));
 
-if($_GET){
-
-}
 
 $resultsProfs = get_teach_after_filter();
 
@@ -72,143 +69,148 @@ $introductionPage = get_field('page_hero_introduction');
         </div>
     </div>
     <form action="#items-prof" method="GET" class="row container-filters mx-auto">
-        <div class="col-sm-3">
-            <div class="container-select">
-                <div class="label">
-                    Localisation
-                </div>
-                <div class="fake-select">
-                    <div class="placeholder">
-                        Choisissez
-                    </div>
-                    <div class="fake-select-content">
-                    <?php if($filterLocation): ?>
-                        <?php $i=0; foreach ($filterLocation as $filterLocationItem): $i++; ?>
-                            <div class="value">
-                                <input type="checkbox" <?php echo ( isset($_GET['location']) && in_array($filterLocationItem->term_id, $_GET['location']) )? 'checked': ''; ?> id="location-<?= $i; ?>" name="location[]" value="<?php echo $filterLocationItem->term_id; ?>">
-                                <label for="location-<?= $i; ?>"><?php echo $filterLocationItem->name; ?></label>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="container-select">
-                <div class="label">
-                    Styles de Yoga
-                </div>
-
-                <div class="fake-select">
-                    <div class="placeholder">
-                        Choisissez
-                    </div>
-                    <div class="fake-select-content">
-                    <?php if($filterYogaStyle): ?>
-                        <?php $i=0; foreach ($filterYogaStyle as $filterYogaStyleItem): $i++;?>
-                        <div class="value">
-                            <input type="checkbox" <?php echo ( isset($_GET['yogaStyle']) && in_array($filterYogaStyleItem->term_id, $_GET['yogaStyle']) )? 'checked': ''; ?> id="yogaStyle-<?= $i; ?>" name="yogaStyle[]" value="<?php echo $filterYogaStyleItem->term_id; ?>">
-                            <label for="yogaStyle-<?= $i; ?>"><?php echo $filterYogaStyleItem->name; ?></label>
+        <div class="col-sm-10 mx-auto">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="container-select">
+                        <div class="label">
+                            Localisation
                         </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="container-select">
-                <div class="label">
-                    Types de Yoga
-                </div>
-                <div class="fake-select">
-                    <div class="placeholder">
-                        Choisissez
-                    </div>
-                    <div class="fake-select-content">
-                    <?php if($filterYogaType): ?>
-                        <?php $i=0; foreach ($filterYogaType as $filterYogaTypeItem): $i++;?>
-                            <div class="value">
-                                <input type="checkbox" <?php echo ( isset($_GET['yogaType']) && in_array($filterYogaTypeItem->term_id, $_GET['yogaType']) )? 'checked': ''; ?> id="yogaType-<?= $i; ?>" name="yogaType[]" value="<?php echo $filterYogaTypeItem->term_id; ?>">
-                                <label for="yogaType-<?= $i; ?>"><?php echo $filterYogaTypeItem->name; ?></label>
+                        <div class="fake-select">
+                            <div class="placeholder">
+                                Choisissez
                             </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="container-select">
-                <div class="label">
-                    Objectifs
-                </div>
-                <div class="fake-select">
-                    <div class="placeholder">
-                        Choisissez
-                    </div>
-                    <div class="fake-select-content">
-                    <?php if($filterGoal): ?>
-                        <?php $i=0; foreach ($filterGoal as $filterGoalItem): $i++;?>
-                            <div class="value">
-                                <input type="checkbox" <?php echo ( isset($_GET['goal']) && in_array($filterGoalItem->term_id, $_GET['goal']) )? 'checked': ''; ?> id="goal-<?= $i; ?>" name="goal[]" value="<?php echo $filterGoalItem->term_id; ?>">
-                                <label for="goal-<?= $i; ?>"><?php echo $filterGoalItem->name; ?></label>
+                            <div class="fake-select-content">
+                                <?php if($filterLocation): ?>
+                                    <?php $i=0; foreach ($filterLocation as $filterLocationItem): $i++; ?>
+                                        <div class="value">
+                                            <input type="checkbox" <?php echo ( isset($_GET['location']) && in_array($filterLocationItem->term_id, $_GET['location']) )? 'checked': ''; ?> id="location-<?= $i; ?>" name="location[]" value="<?php echo $filterLocationItem->term_id; ?>">
+                                            <label for="location-<?= $i; ?>"><?php echo $filterLocationItem->name; ?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="container-select">
-                <div class="label">
-                    Styles d'enseignement
-                </div>
-                <div class="fake-select">
-                    <div class="placeholder">
-                        Choisissez
-                    </div>
-                    <div class="fake-select-content">
-                    <?php if($filterTeachStyle): ?>
-                        <?php $i=0; foreach ($filterTeachStyle as $filterTeachStyleItem): $i++; ?>
-                            <div class="value">
-                                <input type="checkbox" <?php echo ( isset($_GET['teachStyle']) && in_array($filterTeachStyleItem->term_id, $_GET['teachStyle']) )? 'checked': ''; ?> id="teachStyle-<?= $i; ?>" name="teachStyle[]" value="<?php echo $filterTeachStyleItem->term_id; ?>">
-                                <label for="teachStyle-<?= $i; ?>"><?php echo $filterTeachStyleItem->name; ?></label>
+                <div class="col-sm-4">
+                    <div class="container-select">
+                        <div class="label">
+                            Styles de Yoga
+                        </div>
+
+                        <div class="fake-select">
+                            <div class="placeholder">
+                                Choisissez
                             </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                            <div class="fake-select-content">
+                                <?php if($filterYogaStyle): ?>
+                                    <?php $i=0; foreach ($filterYogaStyle as $filterYogaStyleItem): $i++;?>
+                                        <div class="value">
+                                            <input type="checkbox" <?php echo ( isset($_GET['yogaStyle']) && in_array($filterYogaStyleItem->term_id, $_GET['yogaStyle']) )? 'checked': ''; ?> id="yogaStyle-<?= $i; ?>" name="yogaStyle[]" value="<?php echo $filterYogaStyleItem->term_id; ?>">
+                                            <label for="yogaStyle-<?= $i; ?>"><?php echo $filterYogaStyleItem->name; ?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="container-select">
-                <div class="label">
-                    Votre niveau
+                <div class="col-sm-4">
+                    <div class="container-select">
+                        <div class="label">
+                            Types de Yoga
+                        </div>
+                        <div class="fake-select">
+                            <div class="placeholder">
+                                Choisissez
+                            </div>
+                            <div class="fake-select-content">
+                                <?php if($filterYogaType): ?>
+                                    <?php $i=0; foreach ($filterYogaType as $filterYogaTypeItem): $i++;?>
+                                        <div class="value">
+                                            <input type="checkbox" <?php echo ( isset($_GET['yogaType']) && in_array($filterYogaTypeItem->term_id, $_GET['yogaType']) )? 'checked': ''; ?> id="yogaType-<?= $i; ?>" name="yogaType[]" value="<?php echo $filterYogaTypeItem->term_id; ?>">
+                                            <label for="yogaType-<?= $i; ?>"><?php echo $filterYogaTypeItem->name; ?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="fake-select">
-                    <div class="placeholder">
-                        Choisissez
+                <div class="col-sm-4">
+                    <div class="container-select">
+                        <div class="label">
+                            Objectifs
+                        </div>
+                        <div class="fake-select">
+                            <div class="placeholder">
+                                Choisissez
+                            </div>
+                            <div class="fake-select-content">
+                                <?php if($filterGoal): ?>
+                                    <?php $i=0; foreach ($filterGoal as $filterGoalItem): $i++;?>
+                                        <div class="value">
+                                            <input type="checkbox" <?php echo ( isset($_GET['goal']) && in_array($filterGoalItem->term_id, $_GET['goal']) )? 'checked': ''; ?> id="goal-<?= $i; ?>" name="goal[]" value="<?php echo $filterGoalItem->term_id; ?>">
+                                            <label for="goal-<?= $i; ?>"><?php echo $filterGoalItem->name; ?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="fake-select-content">
-                        <?php if($filterLevel): ?>
-                            <?php $i = 0; foreach ($filterLevel as $filterLevelItem): $i++; ?>
-                                <div class="value">
-                                    <input type="checkbox" <?php echo ( isset($_GET['level']) && in_array($filterLevelItem->term_id, $_GET['level']) )? 'checked': ''; ?> id="level-<?= $i; ?>" name="level[]" value="<?php echo $filterLevelItem->term_id; ?>">
-                                    <label for="level-<?= $i; ?>"><?php echo $filterLevelItem->name; ?></label>
-                                </div>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
+                </div>
+                <div class="col-sm-4">
+                    <div class="container-select">
+                        <div class="label">
+                            Styles d'enseignement
+                        </div>
+                        <div class="fake-select">
+                            <div class="placeholder">
+                                Choisissez
+                            </div>
+                            <div class="fake-select-content">
+                                <?php if($filterTeachStyle): ?>
+                                    <?php $i=0; foreach ($filterTeachStyle as $filterTeachStyleItem): $i++; ?>
+                                        <div class="value">
+                                            <input type="checkbox" <?php echo ( isset($_GET['teachStyle']) && in_array($filterTeachStyleItem->term_id, $_GET['teachStyle']) )? 'checked': ''; ?> id="teachStyle-<?= $i; ?>" name="teachStyle[]" value="<?php echo $filterTeachStyleItem->term_id; ?>">
+                                            <label for="teachStyle-<?= $i; ?>"><?php echo $filterTeachStyleItem->name; ?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="container-select">
+                        <div class="label">
+                            Votre niveau
+                        </div>
+                        <div class="fake-select">
+                            <div class="placeholder">
+                                Choisissez
+                            </div>
+                            <div class="fake-select-content">
+                                <?php if($filterLevel): ?>
+                                    <?php $i = 0; foreach ($filterLevel as $filterLevelItem): $i++; ?>
+                                        <div class="value">
+                                            <input type="checkbox" <?php echo ( isset($_GET['level']) && in_array($filterLevelItem->term_id, $_GET['level']) )? 'checked': ''; ?> id="level-<?= $i; ?>" name="level[]" value="<?php echo $filterLevelItem->term_id; ?>">
+                                            <label for="level-<?= $i; ?>"><?php echo $filterLevelItem->name; ?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 text-center marge-top">
+                    <button type="submit" class="button primary">Rechercher un professeur</button>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-12 text-center marge-top">
-            <button type="submit" class="button primary">Rechercher un professeur</button>
-        </div>
     </form>
 </div>
 

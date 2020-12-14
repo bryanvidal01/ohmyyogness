@@ -32,7 +32,7 @@ $professeurInterview = get_field('post_article_prof');
                     </div>
                     <?php endif; ?>
                     <?php if($professeurInterview): ?>
-                    <p>Interview de <strong><?= get_the_title($professeurInterview); ?></strong></p>
+                        <p>Interview de <strong><?= get_field('posttype_prof_full_name', $professeurInterview); ?></strong> du <strong><?= get_the_date('d/m/Y'); ?></strong></p>
                     <a href="<?= get_the_permalink($professeurInterview); ?>" class="button primary">
                         Découvrir ce professeur
                     </a>

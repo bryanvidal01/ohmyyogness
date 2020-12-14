@@ -119,6 +119,7 @@ function get_teach_after_filter(){
         'meta_key'			=> 'posttype_prof_recommandation',
         'orderby'			=> 'meta_value',
         'order'				=> 'DESC',
+        'posts_per_page'    => -1
     );
 
     if($_GET['location']){

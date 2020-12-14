@@ -8,6 +8,8 @@ if($_POST){
     $returnRecommendation = sendRecommendation($postID);
 }
 
+$fullNameTeacher = get_field('posttype_prof_full_name', $postID);
+
 $teacherKeyWords = get_field('posttype_prof_key_words', $postID);
 
 $posttype_prof_calendar_datas = get_field('posttype_prof_calendar_datas');
@@ -43,12 +45,13 @@ if($paramsBackgroundVideo){
 
 $profVideo1 = get_field('posttype_prof_video_1');
 if($profVideo1){
-    parse_str( parse_url( $profVideo1, PHP_URL_QUERY ), $profVideo1Array );
+    preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $profVideo1, $match1);
 }
+
 
 $profVideo2 = get_field('posttype_prof_video_2');
 if($profVideo2){
-    parse_str( parse_url( $profVideo2, PHP_URL_QUERY ), $profVideo2Array );
+    preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $profVideo2, $match2);
 }
 
 // Content
@@ -91,7 +94,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                         <?php if($profMantra): ?>
                         <li>
                             <div class="label">
-                                Sa spécialité
+                                <?= $fullNameTeacher; ?>
                             </div>
                             <div class="response">
                                 <?= $profMantra; ?>
@@ -162,7 +165,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
     </div>
 </div>
 
-<?php if(isset($profVideo1Array) || isset($profVideo2Array)): ?>
+<?php if(isset($match1[1]) || isset($match2[1])): ?>
 <div class="strate-video-prof">
     <img src="<?= (isset($paramsBackgroundVideoURL))? $paramsBackgroundVideoURL : ''; ?>" class="strate-video-prof-background" alt="">
     <div class="container strate-video-prof-container">
@@ -172,20 +175,20 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                     Son univers en vidéo
                 </div>
             </div>
-            <?php if(isset($profVideo1Array)): ?>
+            <?php if(isset($match1[1])): ?>
             <div class="col-sm-6 mx-auto">
                 <div class="title">
                     Les dessous des profs’
                 </div>
-                <iframe width="100%" height="343" src="https://www.youtube.com/embed/<?= $profVideo1Array['v']; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="343" src="https://www.youtube.com/embed/<?= $match1[1]; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <?php endif; ?>
-            <?php if(isset($profVideo2Array)): ?>
+            <?php if(isset($match2[1])): ?>
             <div class="col-sm-6 mx-auto">
                 <div class="title">
                     5 minutes sur le tapis <!--avec --><?php /*echo get_the_title(); */?>
                 </div>
-                <iframe width="100%" height="343" src="https://www.youtube.com/embed/<?= $profVideo2Array['v']; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="343" src="https://www.youtube.com/embed/<?= $match2[1]; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <?php endif; ?>
         </div>
@@ -224,22 +227,22 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
             <table class="calendar-dates">
                 <thead>
                     <tr>
-                        <th width="20%">
+                        <th width="15%">
                             Date
                         </th>
-                        <th width="20%">
+                        <th width="20%" class="hidden-mobile">
                             Début du cours
                         </th>
-                        <th width="20%">
+                        <th width="20%" class="hidden-mobile">
                             Fin du cours
                         </th>
-                        <th width="20%">
+                        <th width="15%">
                             Niveau
                         </th>
-                        <th width="20%">
+                        <th width="15%">
                             Type de yoga
                         </th>
-                        <th width="10%" class="text-right">
+                        <th width="15%">
                             Lieu
                         </th>
                     </tr>
@@ -258,11 +261,17 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                             <tr class="collectif hidde">
                                 <td>
                                     <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_day']; ?>
+                                    <div class="visible-mobile">
+                                        <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_hour_start']; ?>
+                                    </div>
+                                    <div class="visible-mobile">
+                                        <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_hour_end']; ?>
+                                    </div>
                                 </td>
-                                <td>
+                                <td class="hidden-mobile">
                                     <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_hour_start']; ?>
                                 </td>
-                                <td>
+                                <td class="hidden-mobile">
                                     <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_hour_end']; ?>
                                 </td>
                                 <td>
@@ -271,7 +280,7 @@ $profCitationAuthor = get_field('posttype_prof_citation_author');
                                 <td>
                                     <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_yoga_type']; ?>
                                 </td>
-                                <td class="text-right">
+                                <td class="">
                                     <?php echo $agendaTeacherItem['posttype_prof_calendar_datas_location']; ?>
                                 </td>
                             </tr>
